@@ -17,12 +17,12 @@ function App() {
       { nomePorduto: 'Notebook', preco: 'R$ 2500' },
       { nomePorduto: 'Geladeira', preco: 'R$ 3000' },
       { nomePorduto: 'Smartphone', preco: 'R$ 1500' },
-      { nomePorduto: 'guitara', preso: 'R$ 3500' },
+      { nomePorduto: 'guitara', preco: 'R$ 3500' },
     ],
-    ativo: false,
+    ativo: true,
   };
 
-  const dado = luana;
+  const dado = mario;
 
   const ttlPreco = (valores) => {
     console.log(valores[0].preco.replace('R$ ', ''))
