@@ -25,17 +25,42 @@ function App() {
   const dado = mario;
 
   const ttlPreco = (valores) => {
-    console.log(valores[0].preco.replace('R$ ', ''))
     let ttlPreco = 0;
 
     for (let index in valores) {
-      let valor = parseInt(valores[index].preco.replace('R$ ', ''))
+      let valor = parseInt(valores[index].preco.replace('R$ ', ''));
       ttlPreco += valor;
     }
     return ttlPreco;
   };
 
   const volotT = ttlPreco(dado.compras);
+
+  const protudos = [
+    {
+      nome: 'smartphone',
+      preco: 'R$ 2000',
+      cores: ['#29d8d5', '#252a34', '#fc3766'],
+    },
+    {
+      nome: 'nodebook',
+      preco: 'R$ 3000',
+      cores: ['#ffdbd5', '#d4394b', '#f37c59'],
+    },
+    {
+      nome: 'smartphone',
+      preco: 'R$ 1500',
+      cores: ['#365069', '#47c1cb', '#f95786'],
+    },
+  ];
+
+  const filtro = (array) => {
+    let newArrey;
+    newArrey = array.filter((f) => f.preco.replace('R$', '') > 1500);
+    return newArrey;
+  };
+  let ts = filtro(protudos);
+  console.log(ts);
 
   return (
     <>
@@ -56,6 +81,20 @@ function App() {
           você esta gastando muito.
         </p>
       </div>
+      <hr />
+
+      {ts.map(({ nome, preco, cores }) => (
+        <>
+          <h1>{nome}</h1>
+          <p>Preço: {preco}</p>
+          <ul>
+            {cores.map(( cor ) => (
+              <li style={{ backgroundColor: cor, color: '#fff' }} key={cor}>{cor}
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
     </>
   );
 }
