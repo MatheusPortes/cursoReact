@@ -1,19 +1,26 @@
 function App() {
-  function Pessoa() {
-    let nome = ""
-    let idade = null
-    compras: [
-      {
-        nomeProduto: "",
-        preco: "",
-      },
-    ]
-    let ativo = true
-  }
+  
 
-  let matheus = new Pessoa()
+  return (
+    <>
+      <ul>
+        <li>
+          <a href="/app">Home</a>
+        </li>
+        <li>
+          <a href="/Protudos">Protudos</a>
+        </li>
+        <li>
+          <a href="/Home">Gastos</a>
+        </li>
+      </ul>
 
-  return <></>;
+      <section>
+        <p>Esta é a Home</p>
+      </section>
+      
+    </>
+  );
 }
 
 export default App;
