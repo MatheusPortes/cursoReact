@@ -1,4 +1,4 @@
-export default Protudos = () => {
+const Protudos = () => {
   const protudos = [
     {
       nome: 'smartphone',
@@ -43,3 +43,5 @@ export default Protudos = () => {
     </>
   );
 };
+
+export default Protudos
