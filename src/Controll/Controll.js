@@ -43,6 +43,12 @@ export const protudo = [
   },
 ]
 
+export const mais = [{
+  nome: 'Notebook', propriedade: ['16gb RAM','512gb']
+},{
+  nome: 'Smartphone', propriedade: ['2gb RAM','128gb']
+}]
+
 export const funcSoma = (array) => {
   const size = array.compras.length
   const protudos = array.compras

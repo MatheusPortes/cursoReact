@@ -1,4 +1,5 @@
 import { protudo, Filter } from '../../Controll/Controll'
+import Title from '../../Components/Title'
 
 export default function Produtos() {
   const newProtudo = Filter(protudo)
@@ -10,13 +11,14 @@ export default function Produtos() {
   console.log(dado)
   return (
     <>
+    <Title text='Produtos'/>
       {dado.map(({ id, nome, preco, cores }) => (
         <div key={id}>
           <h1>{nome}</h1>
           <p>{preco}</p>
           <ul>
             {cores.map((cores) => (
-              <li style={{ color: '#fff', backgroundColor: cores }}>{cores}</li>
+              <li key={cores} style={{ color: '#fff', backgroundColor: cores }}>{cores}</li>
             ))}
           </ul>
         </div>
