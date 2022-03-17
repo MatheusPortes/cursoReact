@@ -43,11 +43,16 @@ export const protudo = [
   },
 ]
 
-export const mais = [{
-  nome: 'Notebook', propriedade: ['16gb RAM','512gb']
-},{
-  nome: 'Smartphone', propriedade: ['2gb RAM','128gb']
-}]
+export const mais = [
+  {
+    nome: 'Notebook',
+    propriedade: ['16gb RAM', '512gb'],
+  },
+  {
+    nome: 'Smartphone',
+    propriedade: ['2gb RAM', '128gb'],
+  },
+]
 
 export const funcSoma = (array) => {
   const size = array.compras.length
@@ -66,4 +71,17 @@ export const Filter = (array) => {
     array[index].preco = array[index].preco.replace('R$ ', '')
   }
   return array
+}
+
+export const Api = async (URL) => {
+  const response = await fetch(URL)
+    .then((dados) => dados.json())
+    .then((dados) => {
+      return { content: dados, status: true }
+    })
+    .catch((error) => {
+      console.error(error)
+      return { content: error, status: false }
+    })
+  console.log(response)
 }
