@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
-import Reactbutton from '../../Components/Reactbutton/Reactbutton'
+import ReactButton from '../../Components/ReactButton/ReactButton'
 //
 import { pessoa } from '../../Controll/Controll'
 import { funcSoma } from '../../Controll/Controll'
@@ -20,7 +20,7 @@ const Clientis = () => {
 
       {/* {pessoa.map(({ cliente }) => (
         <>
-          <Reactbutton name={cliente} />
+          <ReactButton name={cliente} />
         </>
       ))} */}
 
