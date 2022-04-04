@@ -1,7 +1,10 @@
+import React from 'react'
+import Heades from './Components/Header/Heades'
 import Home from './Viws/home/home'
 import Produtos from './Viws/produtos/produtos'
 import Clientis from './Viws/Clientis/Clientis'
 import Mais from './Viws/Mais/Mais'
+import ReactSection from './Components/ReactSection/ReactSection'
 
 const App = () => {
   const { pathname } = window.location
@@ -24,23 +27,10 @@ const App = () => {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <a href="/Home">HOME</a>
-          </li>
-          <li>
-            <a href="/Produtos">PRODUTOS</a>
-          </li>
-          <li>
-            <a href="/Clientes">CLIENTE</a>
-          </li>
-          <li>
-            <a href="/Mais">MAIS PRODUTOS</a>
-          </li>
-        </ul>
-      </nav>
-      <Component />
+      <Heades />
+      <ReactSection>
+        <Component />
+      </ReactSection>
     </>
   )
 }

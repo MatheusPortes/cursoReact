@@ -1,5 +1,8 @@
+import React from 'react'
+import ReactSpan from  '../../Components/ReactSpan/ReactSpan'
+//
 import { protudo, Filter } from '../../Controll/Controll'
-import Title from '../../Components/Title'
+import Title from '../../Components/Title/Title'
 
 export default function Produtos() {
   const newProtudo = Filter(protudo)
@@ -23,6 +26,7 @@ export default function Produtos() {
           </ul>
         </div>
       ))}
+      <ReactSpan content='aula - 3'/>
     </>
   )
 }

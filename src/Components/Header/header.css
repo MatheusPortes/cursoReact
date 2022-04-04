@@ -1,0 +1,16 @@
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 10rem;
+}
+
+header.header {
+    background-color: #121214;
+    color: #8257e5;
+}
+
+li.header-li {
+    padding: 1.5rem;
+}
