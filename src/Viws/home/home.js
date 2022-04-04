@@ -1,19 +1,15 @@
-import { pessoa } from '../../Controll/Controll'
-import { funcSoma } from '../../Controll/Controll'
+import React from 'react'
+import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 
 const Home = () => {
-  const aux = 0
-  const result = funcSoma(pessoa[aux])
-
   return (
-    <>
-      <p>Cliente: {pessoa[aux].cliente}</p>
-      <p>Idade: {pessoa[aux].idade}</p>
-    
-      <p>Situação: <span style={pessoa[aux].status?{color: 'green'}:{color: 'red'}}>{pessoa[aux].status?'Ativo':'Inativo'}</span></p>
-      <p>Compras: { result }</p>
-      {result > 9999?<p>Esta gastando muito</p>:<></>}
-    </>
+    <div>
+      <h1 style={{ color: 'green' }}>Home</h1>
+      <strong>
+        <p>Esta é a Home do site</p>
+      </strong>
+      <ReactSpan content='aula - 1'/>
+    </div>
   )
 }
 
