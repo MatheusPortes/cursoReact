@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactSpan from  '../../Components/ReactSpan/ReactSpan'
 import Title from '../../Components/Title/Title'
-import ReactButton from  '../../Components/Reactbutton/ReactButton'
+import ReactButton from  '../../Components/ReactButton1/ReactButton1'
 //
 import { protudo, Filter } from '../../Controll/Controll'
 import { Api } from '../../Controll/Controll'
@@ -46,7 +46,7 @@ export default function Produtos() {
           <ul>
             {cores.map((cores) => (
               <li key={cores} style={{ color: '#fff', backgroundColor: cores }}>
-                {cores}
+                {cores}''
               </li>
             ))}
           </ul>
