@@ -1,5 +1,6 @@
 export const pessoa = [
   {
+    id: 0,
     cliente: 'mario',
     idade: 31,
     compras: [
@@ -11,12 +12,24 @@ export const pessoa = [
     status: false,
   },
   {
+    id: 1,
     cliente: 'luana',
     idade: 27,
     compras: [
       { protudo: 'notebook', preco: 2500 },
       { protudo: 'geladeira', preco: 3000 },
       { protudo: 'smatphone', preco: 1500 },
+    ],
+    status: true,
+  },
+  {
+    id: 2,
+    cliente: 'Matheus',
+    idade: 26,
+    compras: [
+      { protudo: 'notebook', preco: 5500 },
+      { protudo: 'geladeira', preco: 1000 },
+      { protudo: 'smatphone', preco: 1000 },
     ],
     status: true,
   },
