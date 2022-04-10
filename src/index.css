@@ -56,3 +56,7 @@ li, a {
 li {
   list-style-type: none;
 }
+
+strong.strong-block {
+  display: block;
+}

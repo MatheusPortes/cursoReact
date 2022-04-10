@@ -5,6 +5,7 @@ import Produtos from './Viws/produtos/produtos'
 import Clientis from './Viws/Clientis/Clientis'
 import Mais from './Viws/Mais/Mais'
 import ReactSection from './Components/ReactSection/ReactSection'
+import ContextVariables from './ReactContext/ContextVariables'
 
 const App = () => {
   const { pathname } = window.location
@@ -26,12 +27,12 @@ const App = () => {
   }
 
   return (
-    <>
+    <ContextVariables>
       <Heades />
       <ReactSection>
         <Component />
       </ReactSection>
-    </>
+    </ContextVariables>
   )
 }
 
