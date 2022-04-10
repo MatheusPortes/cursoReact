@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
-import ReactButton from '../../Components/ReactButton1/ReactButton1'
+import ReactButton from '../../Components/ReactButton/ReactButton'
 //
 import { pessoa } from '../../Controll/Controll'
 import { funcSoma } from '../../Controll/Controll'

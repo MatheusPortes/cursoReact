@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactSpan from  '../../Components/ReactSpan/ReactSpan'
 import Title from '../../Components/Title/Title'
-import ReactButton from  '../../Components/ReactButton1/ReactButton1'
+import ReactButton from  '../../Components/ReactButton/ReactButton'
 //
 import { protudo, Filter } from '../../Controll/Controll'
 import { Api } from '../../Controll/Controll'
