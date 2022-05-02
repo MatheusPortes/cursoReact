@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SubMenu from '../SubMenu/SubMenu'
 //
 import './header.css'
 
 export default function Heades() {
+  const [ submenu, setSubmenu ] = useState(true)
+  const showSubmenu = () => {
+    setSubmenu(!submenu)
+  }
+
+  console.log(submenu)
   return (
     <header className="header">
       <h1 className="header-h1">Curso ReactJS</h1>
       <nav className="header-nav">
         <ul className="header-ul">
-          <li className="header-li">
+          <li className={"header-li"}
+              onMouseEnter={showSubmenu}
+              onMouseLeave={showSubmenu}
+              >
             <a className="header-link" href="/Home">
               Home
             </a>
+              <SubMenu
+              classR={submenu?"hide":"show"}
+              />
           </li>
           <li className="header-li">
             <a className="header-link" href="/Produtos">
