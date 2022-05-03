@@ -1,10 +1,7 @@
 import React from 'react'
 import ReactSpan from  '../../Components/ReactSpan/ReactSpan'
-import Title from '../../Components/Title/Title'
-import ReactButton from  '../../Components/ReactButton/ReactButton'
 //
 import { protudo, Filter } from '../../Controll/Controll'
-import { Api } from '../../Controll/Controll'
 
 export default function Produtos() {
   const newProtudo = Filter(protudo)
@@ -14,31 +11,8 @@ export default function Produtos() {
     return preco > 1500
   })
 
-  const url1 = 'https://ranekapi.origamid.dev/json/api/produto/tablet'
-  const url2 = 'https://ranekapi.origamid.dev/json/api/produto/smartphone'
-  const url3 = 'https://ranekapi.origamid.dev/json/api/produto/notebook'
-
   return (
     <>
-      <Title text="Produtos" />
-      <ReactButton
-        event={() => {
-          Api(url1)
-        }}
-        title="tablet"
-      />
-      <ReactButton
-        event={() => {
-          Api(url2)
-        }}
-        title="smartphone"
-      />
-      <ReactButton
-        event={() => {
-          Api(url3)
-        }}
-        title="notebook"
-      />
       {dado.map(({ id, nome, preco, cores }) => (
         <div key={id}>
           <h1>{nome}</h1>

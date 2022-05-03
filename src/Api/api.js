@@ -1,12 +1,12 @@
 export const Peges = [
   {
     name: 'Aula - 3',
-    link: '#',
+    link: '/aula/atividade-3',
     submenu: [{}]
   },
   {
     name: 'Aula -5',
-    link: '#',
+    link: '/aula/atividade-5',
     submenu: [{}]
   }
 ]

@@ -7,8 +7,8 @@ export default function SubMenu({ classR }) {
   return (
       <ul className={"submenu " + classR}>
         {Peges.map(({ name, submenu, link }) => (
-          <li key={name} className="submenu-li">
-            <a href={link}>{name}</a>
+          <li key={name} className={"submenu-li "  + classR}>
+            <a className={ classR } href={link}>{name}</a>
           </li>
         ))}
       </ul>

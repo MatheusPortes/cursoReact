@@ -4,12 +4,11 @@ import SubMenu from '../SubMenu/SubMenu'
 import './header.css'
 
 export default function Heades() {
-  const [submenu, setSubmenu] = useState(false)
-  const showSubmenu = () => {
+  const [submenu, setSubmenu] = useState(true)
+  const submenuHandler = () => {
     setSubmenu(!submenu)
   }
 
-  console.log(submenu)
   return (
     <header className="header">
       <h1 className="header-h1">Curso ReactJS</h1>
@@ -22,8 +21,8 @@ export default function Heades() {
           </li>
           <li
             className="header-li"
-            onMouseEnter={showSubmenu}
-            onMouseLeave={showSubmenu}
+            onMouseEnter={submenuHandler}
+            onMouseLeave={submenuHandler}
           >
             <a className="header-link" href="/Produtos">
               Products
