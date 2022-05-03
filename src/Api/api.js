@@ -1,22 +1,12 @@
 export const Peges = [
   {
-    name: 'sadfaSdrsdf',
-    link: 'zdfgzdfg',
+    name: 'Aula - 3',
+    link: '#',
     submenu: [{}]
   },
   {
-    name: 'sadrrfsdf',
-    link: 'zdfgzdfg',
-    submenu: [{}]
-  },
-  {
-    name: 'sadfnnnsdf',
-    link: 'zdfgzdfg',
-    submenu: [{}]
-  },
-  {
-    name: 'sadfsdf',
-    link: 'zdfgzdfg',
+    name: 'Aula -5',
+    link: '#',
     submenu: [{}]
   }
 ]
