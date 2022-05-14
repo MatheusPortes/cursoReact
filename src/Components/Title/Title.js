@@ -1,5 +1,9 @@
+import React from "react"
+//
+import './Title.css'
+
 export default function Title ({ text }) {
   return (
-    <h1 style={{ 'color': 'green', 'fontSize': 24, 'margin': 20 }}>{text}</h1>
+    <h1 className="h1-title">{text}</h1>
   )
 }

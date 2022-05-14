@@ -1,3 +1,4 @@
+
 export const pessoa = [
   {
     id: 0,
@@ -87,14 +88,19 @@ export const Filter = (array) => {
 }
 
 export const Api = async (URL) => {
-  const response = await fetch(URL)
-    .then((dados) => dados.json())
-    .then((dados) => {
-      return { content: dados, status: true }
-    })
-    .catch((error) => {
-      console.error(error)
-      return { content: error, status: false }
-    })
-  console.log(response)
+  const apiPromese = new Promise( (resolve, reject) => {
+    fetch(URL)
+      .then( res => {
+        if(!res.ok) throw new Error('Erro na requisição\nstatus: ', res.status, )
+        return res.json()
+      })
+      .then( dados => {
+        return resolve({ content: dados, status: true })
+      })
+      .catch((error) => {
+        console.error(error)
+        return reject({ content: error, status: false })
+      })
+  }) 
+  return apiPromese
 }

@@ -22,7 +22,7 @@ export default function ReactButton({ title, eventOnclick }) {
       <button className="ReactButton-in" onClick={callback}>
         {title}
 
-        { loader?<Loader />: null }
+        {loader && <Loader />}
       </button>
     </div>
   )
