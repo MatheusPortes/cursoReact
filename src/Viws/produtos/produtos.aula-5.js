@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Api } from '../../Controll/Controll'
 //
 import Title from '../../Components/Title/Title'
@@ -7,7 +7,7 @@ import ReactButton from  '../../Components/ReactButton/ReactButton'
 //
 import './produtos.css'
 
-export default function produtosAula5() {
+export default function ProdutosAula5() {
 
   const url1 = 'https://ranekapi.origamid.dev/json/api/produto/tablet'
   const url2 = 'https://ranekapi.origamid.dev/json/api/produto/smartphone'
@@ -16,25 +16,28 @@ export default function produtosAula5() {
   return (
     <div>
       <Title text="Produtos" />
-      <ReactButton
-        event={() => {
-          const ts = Api(url1)
-          console.log(ts)
+
+      <ReactButton 
+        eventOnclick={async () => {
+          await Api(url1)
         }}
         title="tablet"
       />
+
       <ReactButton
-        event={() => {
-          Api(url2)
+        eventOnclick={async () => {
+          await Api(url2)
         }}
         title="smartphone"
       />
+
       <ReactButton
-        event={() => {
-          Api(url3)
+        eventOnclick={async () => {
+          await Api(url3)
         }}
         title="notebook"
       />
+
       <ReactSpan content='aula - 3'/>
     </div>
   )
