@@ -20,7 +20,7 @@ const Clientis = () => {
             <ReactButton
               key={id}
               title={cliente}
-              event={() => {
+              eventOnclick={() => {
                 setPageClient((prev) => (prev = id))
               }}
             />

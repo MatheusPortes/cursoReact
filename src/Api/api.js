@@ -5,8 +5,13 @@ export const Peges = [
     submenu: [{}]
   },
   {
-    name: 'Aula -5',
+    name: 'Aula - 5',
     link: '/aula/atividade-5',
+    submenu: [{}]
+  },
+  {
+    name: 'Aula - 6',
+    link: '/aula/atividade-6',
     submenu: [{}]
   }
 ]

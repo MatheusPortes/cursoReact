@@ -6,15 +6,17 @@ export default function ReactButton({ title, eventOnclick }) {
   const [ loader, setLoader ] = useState(false)
 
   const callback = async () => {
-    setLoader( prev => {
-      return prev = true
-    })
-
-    await eventOnclick()
-
-    setLoader( prev => {
-      return prev = false
-    })
+    if(eventOnclick) {
+      setLoader( prev => {
+        return prev = true
+      })
+  
+      await eventOnclick()
+  
+      setLoader( prev => {
+        return prev = false
+      })
+    }
   } 
 
   return (

@@ -44,7 +44,6 @@ export default function ProdutosAula5() {
           title="notebook"
         />
       </ul>
-      {console.log(showcase)}
       {
         showcase && <Showcase 
           title={showcase.content.nome}
