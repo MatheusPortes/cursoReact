@@ -35,12 +35,16 @@ export default function Showcase({
           </div>
         </div>
       </div>
-      {urlImg && (
-        <div
-          className="showcase-img"
-          style={{ backgroundImage: `url(${[0].src})` }}
-        ></div>
-      )}
+      {urlImg &&
+      urlImg.map((url, index) => (
+        (
+          <div key={index}
+            className="showcase-img"
+            style={{ backgroundImage: `url(${url.src})` }}
+          ></div>
+        )
+      )) 
+      }
     </div>
   )
 }

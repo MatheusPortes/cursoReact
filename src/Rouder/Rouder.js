@@ -1,12 +1,11 @@
-import Clientis from "../Viws/Clientis/Clientis"
-import Mais from "../Viws/Mais/Mais"
-import Home from "../Viws/Home/Home"
-import ProdutosAula3 from "../Viws/Produtos/Produtos.aula-3"
-import ProdutosAula5 from "../Viws/Produtos/Produtos.aula-5"
-import ProdutosAula6 from "../Viws/Produtos/Produtos.aula-6"
+import Clientis from '../Viws/Clientis/Clientis'
+import Mais from '../Viws/Mais/Mais'
+import Home from '../Viws/Home/Home'
+import ProdutosAula3 from '../Viws/Produtos/Produtos.aula-3'
+import ProdutosAula5 from '../Viws/Produtos/Produtos.aula-5'
+import ProdutosAula6 from '../Viws/Produtos/Produtos.aula-6'
 
-
-export function dumbRoutes (pathname) {
+export function dumbRoutes(pathname) {
   let Component
   switch (pathname) {
     case '/aula/atividade-6':

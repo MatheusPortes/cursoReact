@@ -1,3 +1,7 @@
+.showcase-box {
+    width: 35%;
+}
+
 .showcase {
     display: flex;
     padding: 2rem;
