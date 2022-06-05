@@ -12,7 +12,11 @@ li.submenu-li {
   border-radius: 0.6rem;
   margin: 0.1rem;
   min-width: 13rem;
-    text-align: center;
+  text-align: center;
+}
+
+li.submenu-li:hover {
+  background-color:#916ee3;;
 }
 
 ul.submenu.hide {

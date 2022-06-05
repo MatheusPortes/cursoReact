@@ -1,0 +1,50 @@
+.showcase-box {
+    width: 35%;
+}
+
+.showcase {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+h4.showcase-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: #8257e5;
+}
+
+.showcase-description p {
+    margin-bottom: 1rem;
+}
+
+p.showcase-p {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+p.showcase-p-dynamic {
+    min-height: 10rem;
+}
+
+.showcase-spans span {
+    font-weight: 500;
+}
+
+.showcase-spans p:first-child {
+    margin-bottom: 1rem;
+}
+
+span.showcase-preco {
+    margin-right: 5rem;
+}
+
+.showcase-img {
+    height: 40rem;
+    width: 35rem;
+    background-size: cover;
+    border-radius: 1rem;
+    background-position: center;
+    margin-left: 2.5rem;
+}

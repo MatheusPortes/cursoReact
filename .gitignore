@@ -6,6 +6,7 @@
 /.vscode
 .pnp.js
 package-lock
+.env
 
 # testing
 /coverage

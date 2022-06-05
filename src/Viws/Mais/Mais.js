@@ -5,7 +5,7 @@ import { mais } from '../../Controll/Controll'
 import Title from '../../Components/Title/Title'
 
 export default function Mais() {
-  console.log(mais)
+
   return (
     <div>
       <Title text="Mais" />
