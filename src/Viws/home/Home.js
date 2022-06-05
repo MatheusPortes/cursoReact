@@ -2,6 +2,7 @@ import React from 'react'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 
 const Home = () => {
+  
   return (
     <div>
       <h1 style={{ color: 'green' }}>Home</h1>
