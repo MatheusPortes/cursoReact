@@ -1,7 +1,7 @@
 import React from 'react'
 import Heades from './Components/Header/Heades'
 import ReactSection from './Components/ReactSection/ReactSection'
-import ContextVariables from './ReactContext/ContextVariables'
+import ContextGlobal from './ReactContext/ContextGlobal'
 import { dumbRoutes } from './Rouder/Rouder'
 
 const App = () => {
@@ -9,12 +9,12 @@ const App = () => {
   let Component = dumbRoutes(pathname)
 
   return (
-    <ContextVariables>
+    <ContextGlobal>
       <Heades />
       <ReactSection>
         <Component />
       </ReactSection>
-    </ContextVariables>
+    </ContextGlobal>
   )
 }
 

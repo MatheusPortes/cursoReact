@@ -27,7 +27,7 @@ export default function Heades() {
             <a className="header-link" href="/Produtos">
               Products
             </a>
-            <SubMenu classR={submenu ? 'hide' : 'show'} />
+            <SubMenu classR={submenu ? 'hide' : 'show'} selectMenu='Pages'/>
           </li>
           <li className="header-li">
             <a className="header-link" href="/Clientes">
