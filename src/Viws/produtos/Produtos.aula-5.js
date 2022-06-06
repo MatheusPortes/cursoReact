@@ -1,19 +1,15 @@
 import React, { useState } from 'react'
-import { Api } from '../../Controll/Controll'
 //
 import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 import ReactButton from '../../Components/ReactButton/ReactButton'
+import { searchNotebook, searchSmartphone, searchTablet } from '../../Api/ConsultProdutos'
 //
 import './Produtos.css'
 import Showcase from '../../Components/Showcase/Showcase'
 
 export default function ProdutosAula5() {
   const [showcase, setShowcase] = useState(null)
-
-  const url1 = 'https://ranekapi.origamid.dev/json/api/produto/tablet'
-  const url2 = 'https://ranekapi.origamid.dev/json/api/produto/smartphone'
-  const url3 = 'https://ranekapi.origamid.dev/json/api/produto/notebook'
 
   return (
     <div>
@@ -22,7 +18,7 @@ export default function ProdutosAula5() {
       <ul>
         <ReactButton
           eventOnclick={async () => {
-            const date = await Api(url1)
+            const date = await searchTablet()
             setShowcase(date)
           }}
           title="tablet"
@@ -30,7 +26,7 @@ export default function ProdutosAula5() {
 
         <ReactButton
           eventOnclick={async () => {
-            const date = await Api(url2)
+            const date = await searchSmartphone()
             setShowcase(date)
           }}
           title="smartphone"
@@ -38,7 +34,7 @@ export default function ProdutosAula5() {
 
         <ReactButton
           eventOnclick={async () => {
-            const date = await Api(url3)
+            const date = await searchNotebook()
             setShowcase(date)
           }}
           title="notebook"
