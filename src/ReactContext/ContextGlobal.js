@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext, useEffect } from 'react'
-import { searchProduto } from '../Api/ConsultProdutos'
+import { searchProduto } from '../API/ConsultProdutos'
 
 const ReactContextGlobal = createContext()
 

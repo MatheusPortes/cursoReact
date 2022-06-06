@@ -3,7 +3,7 @@ import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 import ReactButton from '../../Components/ReactButton/ReactButton'
 import Showcase from '../../Components/Showcase/Showcase'
-import { searchNotebook, searchSmartphone } from '../../Api/ConsultProdutos'
+import { searchNotebook, searchSmartphone } from '../../API/ConsultProdutos'
 
 export default function ProdutosAula6() {
   const [showcase, setShowcase] = useState(null)

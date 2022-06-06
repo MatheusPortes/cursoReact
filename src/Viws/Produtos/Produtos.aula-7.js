@@ -23,7 +23,7 @@ export default function ProdutosaAula7() {
             ))}
         </ul>
         <div className='box-button'>
-          <a href="http://localhost:3000/aula/atividade-7"><ReactButton title='Refresh' /></a>
+          <a href={`http://localhost:${process.env.REACT_APP_PORT}/aula/atividade-7`}><ReactButton title='Refresh' /></a>
           <ReactButton title='Limpar' eventOnclick={() => {
           setListGlobalProdutos(null)}}/>
         </div>

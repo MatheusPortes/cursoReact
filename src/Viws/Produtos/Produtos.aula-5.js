@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 import ReactButton from '../../Components/ReactButton/ReactButton'
-import { searchNotebook, searchSmartphone, searchTablet } from '../../Api/ConsultProdutos'
+import { searchNotebook, searchSmartphone, searchTablet } from '../../API/ConsultProdutos'
 //
 import './Produtos.css'
 import Showcase from '../../Components/Showcase/Showcase'
