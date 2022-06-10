@@ -27,7 +27,7 @@ export default function Heades() {
             <a className="header-link" href="/Produtos">
               Products
             </a>
-            <SubMenu classR={submenu ? 'hide' : 'show'} selectMenu='Pages'/>
+            <SubMenu classR={submenu ? 'hide' : 'show'} selectMenu="Pages" />
           </li>
           <li className="header-li">
             <a className="header-link" href="/Clientes">
@@ -38,6 +38,16 @@ export default function Heades() {
             <a className="header-link" href="/Mais">
               More
             </a>
+          </li>
+          <li
+            className={'header-li'}
+            onMouseEnter={submenuHandler}
+            onMouseLeave={submenuHandler}
+          >
+            <a className="header-link" href="/FormReact">
+              FormReact
+            </a>
+            <SubMenu classR={submenu ? 'hide' : 'show'} selectMenu="form" />
           </li>
         </ul>
       </nav>

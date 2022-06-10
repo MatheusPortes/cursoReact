@@ -5,10 +5,14 @@ import ProdutosAula3 from '../Viws/Produtos/Produtos.aula-3'
 import ProdutosAula5 from '../Viws/Produtos/Produtos.aula-5'
 import ProdutosAula6 from '../Viws/Produtos/Produtos.aula-6'
 import ProdutosaAula7 from '../Viws/Produtos/Produtos.aula-7'
+import ProdutosaAula8 from '../Viws/Form/Form.aula-8'
 
 export function dumbRoutes(pathname) {
   let Component
   switch (pathname) {
+    case '/form/atividade-8':
+      Component = ProdutosaAula8
+      break
     case '/aula/atividade-7':
       Component = ProdutosaAula7
       break
