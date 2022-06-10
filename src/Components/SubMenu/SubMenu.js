@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Pages } from './SubMenuProdutos'
+import { Form } from './SubMenuForm'
 import './SubMenu.css'
 
 export default function SubMenu({ classR, selectMenu }) {
@@ -9,6 +10,9 @@ export default function SubMenu({ classR, selectMenu }) {
     if(selectMenu) {
       if(selectMenu === 'Pages') {
         setSubMenu(Pages)
+      }
+      if(selectMenu === 'form') {
+        setSubMenu(Form)
       }
     }
   },[selectMenu])
