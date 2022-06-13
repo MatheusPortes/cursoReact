@@ -41,13 +41,16 @@ export default function Heades() {
           </li>
           <li
             className={'header-li'}
-            onMouseEnter={submenuHandler}
+            onMouseEnter={(event) => {
+              // submenuHandler()
+              console.log('event', event)
+            }}
             onMouseLeave={submenuHandler}
           >
             <a className="header-link" href="/FormReact">
               FormReact
             </a>
-            <SubMenu classR={submenu ? 'hide' : 'show'} selectMenu="form" />
+            <SubMenu classR={'show'} selectMenu="form" showSubmenu={true}/>
           </li>
         </ul>
       </nav>

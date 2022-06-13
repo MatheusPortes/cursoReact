@@ -7,10 +7,13 @@ export default function ContextGlobal({ children }) {
   const [loader, setLoader] = useState(false)
   const [listGlobalProdutos, setListGlobalProdutos] = useState([])
 
-  useEffect(async () => {
-    const data = await searchProduto()
-    setListGlobalProdutos(data.content)
-  },[])
+  useEffect(() => {
+    const run = async () => {
+      const data = await searchProduto()
+      setListGlobalProdutos(data.content)
+    }
+    run()
+  }, [])
 
   return (
     <ReactContextGlobal.Provider
