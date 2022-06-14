@@ -19,16 +19,7 @@ export default function Heades() {
               Home
             </a>
           </li>
-          <li
-            className="header-li"
-            onMouseEnter={submenuHandler}
-            onMouseLeave={submenuHandler}
-          >
-            <a className="header-link" href="/Produtos">
-              Products
-            </a>
-            <SubMenu classR={submenu ? 'hide' : 'show'} selectMenu="Pages" />
-          </li>
+          <SubMenu selectMenu="Pages" name='ReactForm' />
           <li className="header-li">
             <a className="header-link" href="/Clientes">
               Client
@@ -39,19 +30,7 @@ export default function Heades() {
               More
             </a>
           </li>
-          <li
-            className={'header-li'}
-            onMouseEnter={(event) => {
-              // submenuHandler()
-              console.log('event', event)
-            }}
-            onMouseLeave={submenuHandler}
-          >
-            <a className="header-link" href="/FormReact">
-              FormReact
-            </a>
-            <SubMenu classR={'show'} selectMenu="form" showSubmenu={true}/>
-          </li>
+          <SubMenu selectMenu="form" name='ReactForm' />
         </ul>
       </nav>
     </header>
