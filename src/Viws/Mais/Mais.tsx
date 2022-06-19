@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 //
 import { mais } from '../../Controll/Controll'
