@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactSpan from  '../../Components/ReactSpan/ReactSpan'
 import Title from '../../Components/Title/Title'
 //
@@ -8,8 +7,8 @@ export default function ProdutosAula3() {
   const newProtudo = Filter(protudo)
 
   const dado = newProtudo.filter(({ preco }) => {
-    Number(preco)
-    return preco > 1500
+    const value = preco.replace('R$ ', '')
+    return Number(value) > 1500
   })
 
   return (

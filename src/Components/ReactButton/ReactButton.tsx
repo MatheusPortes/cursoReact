@@ -1,8 +1,13 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Loader from '../Loader/Loader'
 import './ReactButton.css'
 
-export default function ReactButton({ title, eventOnclick }) {
+interface IReactButtonProps {
+  title: string
+  eventOnclick?: () => void
+}
+
+export default function ReactButton({ title, eventOnclick }:IReactButtonProps) {
   const [ loader, setLoader ] = useState(false)
 
   const callback = async () => {

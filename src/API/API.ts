@@ -1,17 +1,17 @@
 
-export const API = async (URL) => {
+export const API = async (URL: string): Promise<any> => {
   const apiPromese = new Promise( (resolve, reject) => {
     fetch(URL)
-      .then( res => {
+      .then( (res:any) => {
         if(!res.ok) throw new Error('Erro na requisição\nstatus: ', res.status, )
         return res.json()
       })
       .then( dados => {
-        return resolve({ content: dados, status: 200 })
+        return resolve(dados)
       })
       .catch((error) => {
         console.error(error)
-        return reject({ content: error, status: 'error' })
+        return reject(error)
       })
   }) 
   return apiPromese
