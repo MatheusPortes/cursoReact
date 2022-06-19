@@ -1,4 +1,3 @@
-
 export const pessoa = [
   {
     id: 0,
@@ -68,21 +67,41 @@ export const mais = [
   },
 ]
 
-export const funcSoma = (array) => {
-  const size = array.compras.length
-  const protudos = array.compras
-  let result = 0
-
-  for (let index = 0; index < size; index++) {
-    result += parseInt(protudos[index].preco)
-  }
-
-  return result
+interface IFilterProps {
+  id: number
+  nome: string
+  preco: string
+  cores: string[]
 }
 
-export const Filter = (array) => {
+export const Filter = (array:IFilterProps[]) => {
   for (let index = 0; index < array.length; index++) {
     array[index].preco = array[index].preco.replace('R$ ', '')
   }
   return array
+}
+
+interface IComprasProps {
+  protudo: string
+  preco: number
+}
+
+interface ISomaProps {
+  id: number
+  cliente: string
+  idade: number
+  status: boolean
+  compras: IComprasProps[]
+}
+
+export const Soma = (array:ISomaProps) => {
+  const size = array.compras.length
+  const protudos = array.compras
+  let result = 0
+
+  for (let index:number = 0; index < size; index++) {
+    result += protudos[index].preco
+  }
+
+  return result
 }

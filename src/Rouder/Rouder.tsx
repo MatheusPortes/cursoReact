@@ -7,7 +7,7 @@ import ProdutosAula6 from '../Viws/Produtos/Produtos.aula-6'
 import ProdutosaAula7 from '../Viws/Produtos/Produtos.aula-7'
 import ProdutosaAula8 from '../Viws/Form/Form.aula-8'
 
-export function dumbRoutes(pathname) {
+export function dumbRoutes(pathname:string) {
   let Component
   switch (pathname) {
     case '/form/atividade-8':

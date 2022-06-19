@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 //
 import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 import ReactButton from '../../Components/ReactButton/ReactButton'
-import { searchNotebook, searchSmartphone, searchTablet } from '../../API/ConsultProdutos'
+import { ISearchProdutoProps, searchNotebook, searchSmartphone, searchTablet } from '../../API/ConsultProdutos'
 //
 import './Produtos.css'
 import Showcase from '../../Components/Showcase/Showcase'
 
 export default function ProdutosAula5() {
-  const [showcase, setShowcase] = useState(null)
+  const [showcase, setShowcase] = useState<ISearchProdutoProps>()
 
   return (
     <div>
@@ -42,11 +42,11 @@ export default function ProdutosAula5() {
       </ul>
       {showcase && (
         <Showcase
-          title={showcase.content.nome}
-          description={showcase.content.descricao}
-          urlImg={showcase.content.fotos}
-          preco={showcase.content.preco}
-          status={showcase.content.vendido}
+          title={showcase.nome}
+          description={showcase.descricao}
+          urlImg={showcase.fotos}
+          preco={showcase.preco}
+          status={showcase.vendido}
         />
       )}
       <ReactSpan content="aula - 5" />

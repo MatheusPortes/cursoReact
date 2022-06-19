@@ -4,11 +4,11 @@ import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 import ReactButton from '../../Components/ReactButton/ReactButton'
 //
 import { pessoa } from '../../Controll/Controll'
-import { funcSoma } from '../../Controll/Controll'
+import { Soma } from '../../Controll/Controll'
 
 const Clientis = () => {
   const [pageClient, setPageClient] = useState(0)
-  const result = funcSoma(pessoa[pageClient])
+  const result = Soma(pessoa[pageClient])
 
   return (
     <div>

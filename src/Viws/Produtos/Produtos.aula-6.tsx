@@ -3,10 +3,10 @@ import Title from '../../Components/Title/Title'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 import ReactButton from '../../Components/ReactButton/ReactButton'
 import Showcase from '../../Components/Showcase/Showcase'
-import { searchNotebook, searchSmartphone } from '../../API/ConsultProdutos'
+import { ISearchProdutoProps, searchNotebook, searchSmartphone } from '../../API/ConsultProdutos'
 
 export default function ProdutosAula6() {
-  const [showcase, setShowcase] = useState(null)
+  const [showcase, setShowcase] = useState<ISearchProdutoProps>()
   const storage = localStorage
 
   const searchProducts = async () => {
@@ -27,8 +27,8 @@ export default function ProdutosAula6() {
   useEffect(() => {
     if (showcase) {
       storage.clear()
-      storage.setItem('name', showcase.content.nome)
-      storage.setItem('price', showcase.content.preco)
+      storage.setItem('name', showcase.nome)
+      storage.setItem('price', String(showcase.preco))
     }
   }, [showcase, storage])
 
@@ -59,8 +59,8 @@ export default function ProdutosAula6() {
       </ul>
       {showcase && (
         <Showcase
-          title={showcase.content.nome}
-          preco={showcase.content.preco}
+          title={showcase.nome}
+          preco={showcase.preco}
         />
       )}
       <ReactSpan content="aula - 6" />

@@ -1,6 +1,17 @@
-import React from 'react'
-//
 import './Showcase.css'
+
+interface IFotosProps {
+  titulo: string
+  src: string
+}
+
+interface IShowCaseProps {
+  title: string
+  description?: string
+  urlImg?: IFotosProps[]
+  preco: number
+  status?: boolean
+}
 
 export default function Showcase({
   title,
@@ -8,7 +19,7 @@ export default function Showcase({
   urlImg,
   preco,
   status,
-}) {
+}:IShowCaseProps) {
   return (
     <div className="showcase">
       <div className="showcase-box">
@@ -29,18 +40,18 @@ export default function Showcase({
             {status && (
               <p className="showcase-status">
                 <span>Estoque: </span>
-                {status !== false ? 'Disponivel' : 'Sem estoque no momento'}
+                {status? 'Disponivel' : 'Sem estoque no momento'}
               </p>
             )}
           </div>
         </div>
       </div>
       {urlImg &&
-      urlImg.map((url, index) => (
+      urlImg.map(({src}, index) => (
         (
           <div key={index}
             className="showcase-img"
-            style={{ backgroundImage: `url(${url.src})` }}
+            style={{ backgroundImage: `url(${src})` }}
           ></div>
         )
       )) 
