@@ -1,4 +1,4 @@
-export const Pages = [
+export const Produtos = [
   {
     name: 'Aula - 3',
     link: '/aula/atividade-3',

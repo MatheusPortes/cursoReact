@@ -13,7 +13,7 @@ export default function ContextGlobal({ children }) {
       setListGlobalProdutos(data.content)
     }
     run()
-  }, [])
+  },[])
 
   return (
     <ReactContextGlobal.Provider

@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React, { } from 'react'
 import SubMenu from '../SubMenu/SubMenu'
+import { Form } from '../SubMenu/SubMenuForm'
+import { Produtos } from '../SubMenu/SubMenuProdutos'
 //
 import './header.css'
 
 export default function Heades() {
-  const [submenu, setSubmenu] = useState(true)
-  const submenuHandler = () => {
-    setSubmenu(!submenu)
-  }
 
   return (
     <header className="header">
@@ -19,7 +17,7 @@ export default function Heades() {
               Home
             </a>
           </li>
-          <SubMenu selectMenu="Pages" name='ReactForm' />
+          <SubMenu selectMenu={Produtos} name='Produtos' />
           <li className="header-li">
             <a className="header-link" href="/Clientes">
               Client
@@ -30,7 +28,7 @@ export default function Heades() {
               More
             </a>
           </li>
-          <SubMenu selectMenu="form" name='ReactForm' />
+          <SubMenu selectMenu={Form} name='ReactForm' />
         </ul>
       </nav>
     </header>
