@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactSpan from '../../Components/ReactSpan/ReactSpan'
+import Title from '../../Components/Title/Title'
 
 const Home = () => {
   
   return (
     <div>
-      <h1 style={{ color: 'green' }}>Home</h1>
+      <Title text="Home" />
       <strong>
         <p>Esta é a Home do site</p>
       </strong>

@@ -14,5 +14,5 @@ export const Produtos = [
   {
     name: 'Aula - 7',
     link: '/aula/atividade-7',
-  }
+  },
 ]

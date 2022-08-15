@@ -35,9 +35,9 @@ export default function SubMenu({ selectMenu, name }: ISubMenuProps) {
           {name}
           {showMenu && (
             <ul className={'submenu'}>
-              {selectMenu.map(({ name, link }) => (
-                <a href={link}>
-                  <li key={name} className={'submenu-li'}>{name}</li>
+              {selectMenu.map(({ name, link }, index) => (
+                <a key={index} href={link}>
+                  <li className={'submenu-li'}>{name}</li>
                 </a>
               ))}
             </ul>
