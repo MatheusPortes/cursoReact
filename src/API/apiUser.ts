@@ -30,7 +30,7 @@ export const Get = async (
         }
 
         if (body) {
-            fetchParams = { ...fetchParams, body: body }
+            fetchParams = { ...fetchParams, body: JSON.stringify(body) }
         }
 
         fetch(inputURL, {
@@ -54,18 +54,25 @@ export const Get = async (
 }
 
 export const Post = async (
-    URL: string,
-    body: object,
-    header: HeadersInit
+    inputURL: string,
+    headers?: HeadersInit,
+    body?: BodyInit
 ): Promise<any> => {
-    const fetchConfig: RequestInit = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: { ...header },
+    let fetchParams = {}
+
+    if (headers) {
+        fetchParams = { ...fetchParams, headers: headers }
+    }
+
+    if (body) {
+        fetchParams = { ...fetchParams, body: JSON.stringify(body) }
     }
 
     const apiPromese = new Promise((resolve, reject) => {
-        fetch(URL, fetchConfig)
+        fetch(inputURL, {
+            method: `POST`,
+            ...fetchParams,
+        })
             .then((res: any) => {
                 if (!res.ok)
                     throw new Error('Erro na requisição\nstatus: ', res.status)
@@ -83,18 +90,25 @@ export const Post = async (
 }
 
 export const Put = async (
-    URL: string,
-    body: object,
-    header: HeadersInit
+    inputURL: string,
+    headers?: HeadersInit,
+    body?: BodyInit
 ): Promise<any> => {
-    const fetchConfig: RequestInit = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: { ...header },
+    let fetchParams = {}
+
+    if (headers) {
+        fetchParams = { ...fetchParams, headers: headers }
+    }
+
+    if (body) {
+        fetchParams = { ...fetchParams, body: JSON.stringify(body) }
     }
 
     const apiPromese = new Promise((resolve, reject) => {
-        fetch(URL, fetchConfig)
+        fetch(inputURL, {
+            method: `PUT`,
+            ...fetchParams,
+        })
             .then((res: any) => {
                 if (!res.ok)
                     throw new Error('Erro na requisição\nstatus: ', res.status)
@@ -112,18 +126,25 @@ export const Put = async (
 }
 
 export const Delete = async (
-    URL: string,
-    body: object,
-    header: HeadersInit
+    inputURL: string,
+    headers?: HeadersInit,
+    body?: BodyInit
 ): Promise<any> => {
-    const fetchConfig: RequestInit = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: { ...header },
+    let fetchParams = {}
+
+    if (headers) {
+        fetchParams = { ...fetchParams, headers: headers }
+    }
+
+    if (body) {
+        fetchParams = { ...fetchParams, body: JSON.stringify(body) }
     }
 
     const apiPromese = new Promise((resolve, reject) => {
-        fetch(URL, fetchConfig)
+        fetch(inputURL, {
+            method: `DELETE`,
+            ...fetchParams,
+        })
             .then((res: any) => {
                 if (!res.ok)
                     throw new Error('Erro na requisição\nstatus: ', res.status)
@@ -141,18 +162,25 @@ export const Delete = async (
 }
 
 export const Patch = async (
-    URL: string,
-    body: object,
-    header: HeadersInit
+    inputURL: string,
+    headers?: HeadersInit,
+    body?: BodyInit
 ): Promise<any> => {
-    const fetchConfig: RequestInit = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: { ...header },
+    let fetchParams = {}
+
+    if (headers) {
+        fetchParams = { ...fetchParams, headers: headers }
+    }
+
+    if (body) {
+        fetchParams = { ...fetchParams, body: JSON.stringify(body) }
     }
 
     const apiPromese = new Promise((resolve, reject) => {
-        fetch(URL, fetchConfig)
+        fetch(inputURL, {
+            method: `PATCH`,
+            ...fetchParams,
+        })
             .then((res: any) => {
                 if (!res.ok)
                     throw new Error('Erro na requisição\nstatus: ', res.status)
