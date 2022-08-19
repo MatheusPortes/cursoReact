@@ -1,4 +1,4 @@
-import API from "./API"
+import { Get } from "../../API/Fetch-API"
 
 const baseURL = 'https://ranekapi.origamid.dev/json/api/produto'
 
@@ -18,21 +18,21 @@ export interface ISearchProdutoProps {
 }
 
 export async function searchTablet(): Promise<ISearchProdutoProps> {
-  const data = await API(`${baseURL}/tablet`)
+  const data = await Get(`${baseURL}/tablet`)
   return data
 }
 
 export const searchSmartphone = async (): Promise<ISearchProdutoProps> => {
-  const data = await API(`${baseURL}/smartphone`)
+  const data = await Get(`${baseURL}/smartphone`)
   return data
 }
 
 export const searchNotebook = async (): Promise<ISearchProdutoProps> => {
-  const data = await API(`${baseURL}/notebook`)
+  const data = await Get(`${baseURL}/notebook`)
   return data
 }
 
 export const searchProduto = async (): Promise<ISearchProdutoProps[]> => {
-  const data = await API(`${baseURL}`)
+  const data = await Get(`${baseURL}`)
   return data
 }

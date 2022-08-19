@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, useEffect } from 'react'
-import { ISearchProdutoProps, searchProduto } from '../API/ConsultProdutos'
+import { ISearchProdutoProps, searchProduto } from '../Service/Protudos/produtos.service'
 
 interface IGlobalContext {
   loader?: boolean
