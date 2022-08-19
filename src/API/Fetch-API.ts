@@ -1,45 +1,31 @@
-export const API = async (URL: string): Promise<any> => {
-    const apiPromese = new Promise((resolve, reject) => {
-        API(URL)
-            .then((res: any) => {
-                if (!res.ok)
-                    throw new Error('Erro na requisição\nstatus: ', res.status)
-                return res.json()
-            })
-            .then((dados) => {
-                return resolve(dados)
-            })
-            .catch((error) => {
-                console.error(error)
-                return reject(error)
-            })
-    })
-    return apiPromese
+const defaultHeaders = {
+    'Content-Type': 'application/json',
+    Accept: '*/*',
+    'Accept-Encoding': 'gzip, deflate, br',
 }
 
-export const Get = async (
-    inputURL: string,
-    headers?: HeadersInit,
-    body?: BodyInit
-): Promise<any> => {
+export const Get = async ( inputURL: string, body?: {}, headers?: HeadersInit ): Promise<any> => {
+    let fetchParams = {}
+
+    if (headers) {
+        fetchParams = { ...fetchParams, headers: headers }
+    } else {
+        fetchParams = {
+            ...fetchParams,
+            headers: defaultHeaders,
+        }
+    }
+
+    if (body) {
+        fetchParams = { ...fetchParams, body: JSON.stringify(body) }
+    }
+
     const apiPromese = new Promise((resolve, reject) => {
-        let fetchParams = {}
-
-        if (headers) {
-            fetchParams = { ...fetchParams, headers: headers }
-        }
-
-        if (body) {
-            fetchParams = { ...fetchParams, body: JSON.stringify(body) }
-        }
-
         fetch(inputURL, {
             method: `GET`,
             ...fetchParams,
         })
             .then((res: any) => {
-                if (!res.ok)
-                    throw new Error('Erro na requisição\nstatus: ', res.status)
                 return res.json()
             })
             .then((dados) => {
@@ -53,15 +39,16 @@ export const Get = async (
     return apiPromese
 }
 
-export const Post = async (
-    inputURL: string,
-    headers?: HeadersInit,
-    body?: BodyInit
-): Promise<any> => {
+export const Post = async ( inputURL: string, body?: {}, headers?: HeadersInit ): Promise<any> => {
     let fetchParams = {}
 
     if (headers) {
         fetchParams = { ...fetchParams, headers: headers }
+    } else {
+        fetchParams = {
+            ...fetchParams,
+            headers: defaultHeaders,
+        }
     }
 
     if (body) {
@@ -73,9 +60,7 @@ export const Post = async (
             method: `POST`,
             ...fetchParams,
         })
-            .then((res: any) => {
-                if (!res.ok)
-                    throw new Error('Erro na requisição\nstatus: ', res.status)
+            .then((res: Response) => {
                 return res.json()
             })
             .then((dados) => {
@@ -89,15 +74,16 @@ export const Post = async (
     return apiPromese
 }
 
-export const Put = async (
-    inputURL: string,
-    headers?: HeadersInit,
-    body?: BodyInit
-): Promise<any> => {
+export const Put = async ( inputURL: string, body?: {}, headers?: HeadersInit ): Promise<any> => {
     let fetchParams = {}
 
     if (headers) {
         fetchParams = { ...fetchParams, headers: headers }
+    } else {
+        fetchParams = {
+            ...fetchParams,
+            headers: defaultHeaders,
+        }
     }
 
     if (body) {
@@ -110,8 +96,6 @@ export const Put = async (
             ...fetchParams,
         })
             .then((res: any) => {
-                if (!res.ok)
-                    throw new Error('Erro na requisição\nstatus: ', res.status)
                 return res.json()
             })
             .then((dados) => {
@@ -125,15 +109,16 @@ export const Put = async (
     return apiPromese
 }
 
-export const Delete = async (
-    inputURL: string,
-    headers?: HeadersInit,
-    body?: BodyInit
-): Promise<any> => {
+export const Delete = async ( inputURL: string, body?: {}, headers?: HeadersInit ): Promise<any> => {
     let fetchParams = {}
 
     if (headers) {
         fetchParams = { ...fetchParams, headers: headers }
+    } else {
+        fetchParams = {
+            ...fetchParams,
+            headers: defaultHeaders,
+        }
     }
 
     if (body) {
@@ -146,8 +131,6 @@ export const Delete = async (
             ...fetchParams,
         })
             .then((res: any) => {
-                if (!res.ok)
-                    throw new Error('Erro na requisição\nstatus: ', res.status)
                 return res.json()
             })
             .then((dados) => {
@@ -161,15 +144,16 @@ export const Delete = async (
     return apiPromese
 }
 
-export const Patch = async (
-    inputURL: string,
-    headers?: HeadersInit,
-    body?: BodyInit
-): Promise<any> => {
+export const Patch = async ( inputURL: string, body?: {}, headers?: HeadersInit ): Promise<any> => {
     let fetchParams = {}
 
     if (headers) {
         fetchParams = { ...fetchParams, headers: headers }
+    } else {
+        fetchParams = {
+            ...fetchParams,
+            headers: defaultHeaders,
+        }
     }
 
     if (body) {
@@ -182,8 +166,6 @@ export const Patch = async (
             ...fetchParams,
         })
             .then((res: any) => {
-                if (!res.ok)
-                    throw new Error('Erro na requisição\nstatus: ', res.status)
                 return res.json()
             })
             .then((dados) => {
@@ -197,7 +179,7 @@ export const Patch = async (
     return apiPromese
 }
 
-export const Fetch = {
+export const FetchAPI = {
     Get: Get,
     Post: Post,
     Put: Put,
@@ -205,4 +187,4 @@ export const Fetch = {
     Patch: Patch,
 }
 
-export default API
+export default FetchAPI
