@@ -16,15 +16,14 @@ const Clientis = () => {
 
       <div className="Clientes-nav">
         {pessoa.map(({ cliente, id }) => (
-          <>
+          <div key={id}>
             <ReactButton
-              key={id}
               title={cliente}
               eventOnclick={() => {
                 setPageClient((prev) => (prev = id))
               }}
             />
-          </>
+          </div>
         ))}
       </div>
 

@@ -7,7 +7,6 @@ import './Produtos.css'
 
 export default function ProdutosaAula7() {
   const { listGlobalProdutos, setListGlobalProdutos } = useListGlobalProdutos()
-  console.log(listGlobalProdutos)
 
   return (
     <div>
