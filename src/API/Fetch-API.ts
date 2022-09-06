@@ -25,7 +25,7 @@ export const Get = async ( inputURL: string, body?: {}, headers?: HeadersInit ):
             method: `GET`,
             ...fetchParams,
         })
-            .then((res: any) => {
+            .then((res: Response) => {
                 return res.json()
             })
             .then((dados) => {

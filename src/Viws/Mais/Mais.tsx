@@ -2,9 +2,15 @@ import ReactSpan from '../../Components/ReactSpan/ReactSpan'
 //
 import { mais } from '../../Controll/Controll'
 import Title from '../../Components/Title/Title'
+import { searchProducts } from '../../Service/Protudos/aula_4.service'
 
 export default function Mais() {
-
+  const ts = async () => {
+    const data = await searchProducts({ id: 1 , name: `matheus` })
+    console.log(data)
+  }
+  ts()
+console.log(`render`)
   return (
     <div>
       <Title text="Mais" />
