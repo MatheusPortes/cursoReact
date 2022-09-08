@@ -1,4 +1,4 @@
-import { Get } from "../../API/Fetch-API"
+import { Get } from "../API/Fetch-API"
 
 const baseURL = 'https://ranekapi.origamid.dev/json/api/produto'
 

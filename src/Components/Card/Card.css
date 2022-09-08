@@ -1,0 +1,32 @@
+.card {
+    box-shadow: 1px 1.5px 5px 0.5px #e1e1e1;
+    padding: 1.5rem;
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.8rem;
+}
+
+.out-card-quantity {
+    display: flex;
+    justify-content: flex-end;
+}
+
+span.card-quantity {
+    width: 2.7rem;
+    height: 2.7rem;
+    background-color: #8257e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+}
+
+h4.card-title {
+    margin-bottom: 1rem;
+}
+
+.card-price {
+    font-weight: 500;
+}
