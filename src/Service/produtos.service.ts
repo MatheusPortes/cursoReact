@@ -1,7 +1,7 @@
 import { Get } from "../API/Fetch-API"
 import { QueryString } from "../Controll/Controll"
 
-const baseURL = 'http://localhost:8080/product'
+const baseURL = `${process.env.REACT_APP_API_SERVER}/product`
 
 type searchProductsProps = {
     id?: number
