@@ -5,8 +5,10 @@ interface IReactSectionProps {
   children: ReactNode
 }
 
-export function PageBase({ children }:IReactSectionProps) {
+export function PageBase({ children }: IReactSectionProps) {
   return (
-    <section className='ReactSection col-s1'>{ children }</section>
+    <section className='page'>
+      <div className='page-base col-s1'>{children}</div>
+    </section>
   )
 }

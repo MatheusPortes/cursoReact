@@ -13,14 +13,20 @@ texto fluidos
 'em' - multiplicado pela pai
 'rem' - multiplicado pelo root */
 
-html {
-	/* a cada 1rem será considera 10px */
-	font-size: 62.5%
-}
-
 /* body > iframe {
   pointer-events: none;
 } */
+
+div#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  /* a cada 1rem será considera 10px */
+  font-size: 62.5%
+}
 
 body {
 	font-size: 1.6rem

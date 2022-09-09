@@ -2,8 +2,10 @@
     width: 90%;
     margin: auto;
     padding-top: 3rem;
+    height: 100%;
 }
 
-.ReactSection {
-    
+.page {
+    height: 100%;
+    overflow: auto;
 }
