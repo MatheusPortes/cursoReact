@@ -32,7 +32,7 @@ export function Card({ infoCard }: CardProps) {
                 <div className="card-price">{infoCard.price} R$</div>
             </div>
 
-            <div className="card-container-right out-card-quantity">
+            <div className="card-container-right">
                 <span className="card-quantity">{infoCard.quantity}</span>
             </div >
 

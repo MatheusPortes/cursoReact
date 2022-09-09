@@ -15,7 +15,7 @@ interface Props {
 
 const ReactContextGlobal = createContext<IGlobalContext>({} as IGlobalContext)
 
-export default function ContextGlobal({ children }:Props) {
+export function ContextGlobal({ children }:Props) {
   const [loader, setLoader] = useState<boolean>()
   const [listGlobalProdutos, setListGlobalProdutos] = useState<ISearchProdutoProps[]>()
 

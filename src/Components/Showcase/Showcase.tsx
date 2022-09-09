@@ -13,7 +13,7 @@ interface IShowCaseProps {
   status?: boolean
 }
 
-export default function Showcase({
+export function Showcase({
   title,
   description,
   urlImg,

@@ -4,7 +4,7 @@ interface IReactSpanProps {
   content: string
 }
 
-export default function ReactSpan({ content }:IReactSpanProps) {
+export function ReactSpan({ content }:IReactSpanProps) {
   return (
     <span className='ReactSpan'>{ content }</span>
   )

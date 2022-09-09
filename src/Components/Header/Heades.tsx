@@ -1,10 +1,10 @@
-import SubMenu from '../SubMenu/SubMenu'
+import { SubMenu } from '../SubMenu/SubMenu'
 import { Form } from '../SubMenu/SubMenuForm'
 import { Produtos } from '../SubMenu/SubMenuProdutos'
 //
 import './header.css'
 
-export default function Heades() {
+export function Heades() {
     return (
         <header className="header">
             <h1 className="header-h1">Curso ReactJS</h1>

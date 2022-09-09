@@ -56,17 +56,6 @@ export const protudo = [
     },
 ]
 
-export const mais = [
-    {
-        nome: 'Notebook',
-        propriedade: ['16gb RAM', '512gb'],
-    },
-    {
-        nome: 'Smartphone',
-        propriedade: ['2gb RAM', '128gb'],
-    },
-]
-
 export function QueryString(params: any): string {
     return Object.keys(params)
         .map(

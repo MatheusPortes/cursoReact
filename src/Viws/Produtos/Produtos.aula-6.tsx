@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import Title from '../../Components/Title/Title'
-import ReactSpan from '../../Components/ReactSpan/ReactSpan'
-import ReactButton from '../../Components/ReactButton/ReactButton'
-import Showcase from '../../Components/Showcase/Showcase'
+import { useState, useEffect } from 'react'
+import { Title } from '../../Components/Title/Title'
+import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
+import { ReactButton } from '../../Components/ReactButton/ReactButton'
+import { Showcase } from '../../Components/Showcase/Showcase'
 import {
     ISearchProdutoProps,
     searchNotebook,
     searchSmartphone,
 } from '../../Service/ranekapi'
 
-export default function ProdutosAula6() {
+export function ProdutosAula6() {
     const [showcase, setShowcase] = useState<ISearchProdutoProps>()
     const storage = localStorage
 

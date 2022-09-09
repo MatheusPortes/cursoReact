@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Post } from '../../API/Fetch-API'
-import ReactSpan from '../../Components/ReactSpan/ReactSpan'
-import Title from '../../Components/Title/Title'
+import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
+import { Title } from '../../Components/Title/Title'
 
 interface formProps {
     name: string
@@ -27,7 +27,7 @@ const defaultInit = {
     state: ``,
 }
 
-export default function FormAula8() {
+export function FormAula8() {
     const [inputForm, setInputForm] = useState<formProps>(defaultInit)
 
     const setForm = (value: string, input: string) => {
@@ -53,7 +53,6 @@ export default function FormAula8() {
 
         const ts = await Post('http://localhost:8080/user', body)
         console.log(ts)
-
     }
 
     return (

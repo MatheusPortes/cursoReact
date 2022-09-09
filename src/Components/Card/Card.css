@@ -4,12 +4,19 @@
     display: flex;
     justify-content: space-between;
     border-radius: 0.8rem;
-    min-height: 4em;
-    width: 35rem;
+    min-height: 5em;
+    width: 45%;
     align-items: center;
+    margin: 15px;
 }
 
-.out-card-quantity {
+.box-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-container-right {
     display: flex;
     justify-content: flex-end;
 }
