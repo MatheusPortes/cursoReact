@@ -35,27 +35,6 @@ export const pessoa = [
     },
 ]
 
-export const protudo = [
-    {
-        id: 1,
-        nome: 'Smartphone',
-        preco: 'R$ 2000',
-        cores: ['#29dBD5', '#252A34', '#FC3766'],
-    },
-    {
-        id: 2,
-        nome: 'Notebook',
-        preco: 'R$ 3000',
-        cores: ['#ffd045', '#d4394b', '#f37c59'],
-    },
-    {
-        id: 3,
-        nome: 'Tablet',
-        preco: 'R$ 1500',
-        cores: ['#365069', '#47c1cB', '#f95786'],
-    },
-]
-
 export function QueryString(params: any): string {
     return Object.keys(params)
         .map(

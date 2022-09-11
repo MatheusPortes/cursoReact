@@ -9,3 +9,9 @@ ul.box-ul {
 .box-button {
   display: flex;
 }
+
+.box-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

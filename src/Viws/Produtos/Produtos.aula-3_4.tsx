@@ -3,8 +3,9 @@ import { Title } from '../../Components/Title/Title'
 import { ISearchProducts, searchProducts } from '../../Service/produtos.service'
 import { useEffect, useState } from 'react'
 import { Card } from '../../Components/Card/Card'
+import './Produtos.css'
 
-export function ProdutosAula4() {
+export function ProdutosAula3_4() {
     const [products, setProducts] = useState<ISearchProducts[]>([])
 
     useEffect(() => {
@@ -12,7 +13,6 @@ export function ProdutosAula4() {
             const run = async () => {
                 const data = await searchProducts({ id: 1, name: `matheus` })
                 setProducts(data)
-                console.log(data)
             }
             run()
         } catch (error) {
@@ -25,10 +25,10 @@ export function ProdutosAula4() {
             <Title text="Produtos" />
             <div className='box-card'>
                 {products.map((value) => (
-                    <Card key={value.id} infoCard={value} />
+                    <Card key={value.id} infoCard={value} id={value.id} />
                 ))}
             </div>
-            <ReactSpan content="aula - 4" />
+            <ReactSpan content="aula - 3/4" />
         </div>
     )
 }

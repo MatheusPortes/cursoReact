@@ -17,9 +17,6 @@ export function Heades() {
                     <a className="header-link" href="/Clientes">
                         <li className="header-li">Client</li>
                     </a>
-                    <a className="header-link" href="/Mais">
-                        <li className="header-li">More</li>
-                    </a>
                     <SubMenu selectMenu={Form} name="ReactForm" />
                 </ul>
             </nav>

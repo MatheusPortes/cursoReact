@@ -1,7 +1,7 @@
 export const Produtos = [
   {
     name: 'Aula - 3',
-    link: '/aula/atividade-3',
+    link: '/aula/atividade-3-4',
   },
   {
     name: 'Aula - 5',

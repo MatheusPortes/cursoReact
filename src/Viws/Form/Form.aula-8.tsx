@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Post } from '../../API/Fetch-API'
+import { Post } from '../../API/drag-network-api'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { Title } from '../../Components/Title/Title'
 

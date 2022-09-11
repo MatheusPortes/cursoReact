@@ -1,4 +1,4 @@
-import { Get } from "../API/Fetch-API"
+import { Get } from "../API/drag-network-api"
 import { QueryString } from "../Controll/Controll"
 
 const baseURL = `${process.env.REACT_APP_API_SERVER}/product`
