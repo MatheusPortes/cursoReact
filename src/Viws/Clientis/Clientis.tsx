@@ -1,14 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Title } from '../../Components/Title/Title'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { ReactButton } from '../../Components/ReactButton/ReactButton'
 //
 import { pessoa } from '../../Controll/Controll'
 import { Soma } from '../../Controll/Controll'
+import { searchUserProducts } from '../../Service/user'
 
 export const Clientis = () => {
     const [pageClient, setPageClient] = useState(0)
     const result = Soma(pessoa[pageClient])
+
+    useEffect(() => {
+        const run = async () => {
+            const data = await searchUserProducts()
+            console.log(data)
+        }
+        run()
+    },[])
 
     return (
         <div>
