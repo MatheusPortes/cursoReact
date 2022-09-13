@@ -5,16 +5,18 @@ import { ReactButton } from '../../Components/ReactButton/ReactButton'
 //
 import { pessoa } from '../../Controll/Controll'
 import { Soma } from '../../Controll/Controll'
-import { searchUserProducts } from '../../Service/user'
+import { IBuyProducts, ISearchUserProducts, searchUserProducts } from '../../Service/user'
 
 export const Clientis = () => {
     const [pageClient, setPageClient] = useState(0)
+    const [user, setUser] = useState<ISearchUserProducts[]>([])
     const result = Soma(pessoa[pageClient])
 
     useEffect(() => {
         const run = async () => {
             const data = await searchUserProducts()
             console.log(data)
+            setUser(data)
         }
         run()
     },[])
@@ -35,6 +37,22 @@ export const Clientis = () => {
                     </div>
                 ))}
             </div>
+
+            {user.map(({ buy_products, email, is_status, login, person }, index) => (
+                <div key={index}>
+                    <p>{ person.name }</p>
+                    <p>{ person.cpf }</p>
+                    <p>{ login }</p>
+                    <p>{ email }</p>
+                    <p>{ is_status }</p>
+                    { buy_products.map(({ products }, index) => (
+                        <div key={index}>
+                            <p>{products.name}</p>
+                            <p>{products.price}</p>
+                        </div>
+                    ))}
+                </div>
+            ))}
 
             <p>Cliente: {pessoa[pageClient].cliente}</p>
             <p>Idade: {pessoa[pageClient].idade}</p>
