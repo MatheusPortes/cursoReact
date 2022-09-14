@@ -12,6 +12,11 @@ export const Clientis = () => {
     const [user, setUser] = useState<ISearchUserProducts[]>([])
     const result = Soma(pessoa[pageClient])
 
+    const firstWord = (text: string): string => {
+        const array = text.split(' ')
+        return array[0]
+    }
+
     useEffect(() => {
         const run = async () => {
             const data = await searchUserProducts()
@@ -30,6 +35,19 @@ export const Clientis = () => {
                     <div key={id}>
                         <ReactButton
                             title={cliente}
+                            eventOnclick={() => {
+                                setPageClient((prev) => (prev = id))
+                            }}
+                        />
+                    </div>
+                ))}
+            </div>
+
+            <div className="Clientes-nav">
+                {user.map(({ person, id, login }) => (
+                    <div key={id}>
+                        <ReactButton
+                            title={`${firstWord(person.name)} @ID-${id}`}
                             eventOnclick={() => {
                                 setPageClient((prev) => (prev = id))
                             }}
