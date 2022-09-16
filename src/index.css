@@ -70,3 +70,59 @@ li {
 strong.strong-block {
   display: block;
 }
+
+.continuity-col-5 {
+  width: 80%;
+}
+
+.continuity-col-4 {
+  width: 75%;
+}
+
+.continuity-col-3 {
+  width: 66.6%;
+}
+
+.col-5 {
+  width: 20%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-3 {
+  width: 33.3%;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.box-flex {
+  display: flex;
+}
+
+.font-strong {
+  font-weight: 100;
+}
+
+.font-mid {
+  font-weight: 500;
+}
+
+.font-weak {
+  font-weight: 800;
+}
+
+.success {
+  color: #096e09;
+}
+
+.error {
+  color: #dd1d1d;
+}

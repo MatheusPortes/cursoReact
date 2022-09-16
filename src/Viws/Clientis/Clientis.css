@@ -1,0 +1,19 @@
+.client-box {
+    padding: 1.2em;
+    background-color: #2c2c2c0d;
+    border-radius: 0.8rem;
+    border: solid 3px #ededed;
+}
+
+.client-box-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-span {
+    margin-right: 1rem;
+}
+
+.box-info:not(:last-child) {
+    margin-bottom: 0.8rem;
+}
