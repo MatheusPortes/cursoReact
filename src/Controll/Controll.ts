@@ -64,21 +64,20 @@ interface IComprasProps {
 }
 
 interface ISomaProps {
-    id: number
-    cliente: string
-    idade: number
-    status: boolean
-    compras: IComprasProps[]
+    id_products: number,
+    products: {
+        id: number,
+        name: string,
+        price: number
+    }
 }
 
-export const Soma = (array: ISomaProps) => {
-    const size = array.compras.length
-    const protudos = array.compras
+export const Soma = (array: ISomaProps[]) => {
     let result = 0
 
-    for (let index: number = 0; index < size; index++) {
-        result += protudos[index].preco
+    for (let index: number = 0; index < array.length; index++) {
+        result += array[index].products.price
     }
 
-    return result
+    return Number(result.toFixed(2))
 }

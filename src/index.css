@@ -105,6 +105,7 @@ strong.strong-block {
 
 .box-flex {
   display: flex;
+  align-items: center;
 }
 
 .font-strong {
@@ -112,7 +113,7 @@ strong.strong-block {
 }
 
 .font-mid {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .font-weak {
@@ -120,9 +121,9 @@ strong.strong-block {
 }
 
 .success {
-  color: #096e09;
+  color: #096e09 !important;
 }
 
 .error {
-  color: #dd1d1d;
+  color: #dd1d1d !important;
 }
