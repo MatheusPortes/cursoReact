@@ -31,7 +31,8 @@ export const Clientis = () => {
 
    const nextSlide = () => {
       setCurrent(current === clientButton.length - 1 ? 0 : current + 1)
-      console.log(current + 2)
+      // console.log(`Calculo`,((clientButton.length - (current + 2)) * -1 ))
+      // console.log(`current`,current)
       // if(slider.current) {
       //    console.log(slider.current.scrollLeft, 'nextSlide')
       //    console.log(slider.current.offsetWidth, 'nextSlide')
@@ -42,7 +43,8 @@ export const Clientis = () => {
    }
    const prevSlide = () => {
       setCurrent(current === 0 ? clientButton.length - 1 : current - 1)
-      console.log(current + 2)
+      // console.log(`current + 2`,current + 2)
+      // console.log(`current`,current)
       // if(slider.current) {
       //    console.log(slider.current.scrollLeft, 'prevSlide')
       //    console.log(slider.current.offsetWidth, 'prevSlide')
@@ -75,11 +77,11 @@ export const Clientis = () => {
                      <div
                         className={
                            // "clientes-button image "
-                           (index === current ||  index <= current + 2) ? 'slide active' : 'slide'
+                           (index === current) ? 'slide active' : 'slide'
                         }
                         key={id}
                      >
-                        {(index === current ||  index <= current + 2) && (
+                        {(index === current) && (
                            <ReactButton
                               title={`${firstWord(person.name)}`}
                               eventOnclick={() => {
