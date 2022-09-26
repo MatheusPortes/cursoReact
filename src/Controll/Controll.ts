@@ -58,11 +58,6 @@ export const Filter = (array: IFilterProps[]) => {
     return array
 }
 
-interface IComprasProps {
-    protudo: string
-    preco: number
-}
-
 interface ISomaProps {
     id_products: number,
     products: {

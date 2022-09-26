@@ -3,7 +3,7 @@ import { ProdutosAula5 } from '../Viws/Produtos/Produtos.aula-5'
 import { ProdutosAula6 } from '../Viws/Produtos/Produtos.aula-6'
 import { ProdutosAula7 } from '../Viws/Produtos/Produtos.aula-7'
 import { FormAula8 } from '../Viws/Form/Form.aula-8'
-import { Clientis } from '../Viws/Clientis/Clientis'
+import { Clientis } from '../Viws/Clientis/Clients'
 import { Home } from '../Viws/Home/Home'
 
 export function dumbRoutes(pathname: string) {

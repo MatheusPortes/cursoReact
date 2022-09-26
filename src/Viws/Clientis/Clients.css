@@ -1,0 +1,155 @@
+/* .Clientes-nav {
+   display: flex;
+   justify-content: center;
+   background-color: #f1f3f9;
+   border-radius: 10rem;
+   margin-bottom: 2rem;
+}
+
+.client-box-info {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.info-span {
+   margin-right: 1rem;
+}
+
+.box-info:not(:last-child) {
+   margin-bottom: 0.5rem;
+}
+
+.info {
+   color: #929292;
+   font-size: 1.25rem;
+}
+
+.client-title {
+   padding-bottom: 1.5rem;
+   text-align: center;
+}
+
+.clientes-button:not(:last-child) {
+   margin-bottom: 1rem;
+}
+
+.client {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+
+.client-box {
+   padding: 1.2em;
+   background-color: #2c2c2c0d;
+   border-radius: 0.8rem;
+   display: inline-block;
+}
+
+.client-info {
+    min-width: 400px;
+}
+
+.client-divider {
+   margin: 0rem 3.5rem;
+   width: 0.5rem;
+   height: 8rem;
+   background-color: #dbdbdb;
+   border-radius: 1rem;
+}
+
+.client-box-list {
+   padding-top: 0;
+   display: inline-block;
+}
+
+.client-amount {
+    box-shadow: 1px 1.5px 5px 0.5px #e1e1e1;
+    border-radius: 0.8rem;
+    align-items: center;
+    padding: 1.2em;
+}
+
+.client-product {
+    min-width: 250px;
+} */
+
+/* .slider {
+   position: relative;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow-x: auto;
+   width: 250px;
+   transition: 1s;
+}
+
+.right-arrow {
+   position: absolute;
+   top: 50%;
+   right: 32px;
+   font-size: 3rem;
+   color: #000;
+   z-index: 10;
+   cursor: pointer;
+   user-select: none;
+}
+
+.left-arrow {
+   position: absolute;
+   top: 50%;
+   left: 32px;
+   font-size: 3rem;
+   color: #000;
+   z-index: 10;
+   cursor: pointer;
+   user-select: none;
+} */
+
+.slider {
+   position: relative;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.image {
+   width: 1000px;
+   height: 600px;
+   border-radius: 10px;
+}
+
+.right-arrow {
+   position: absolute;
+   top: 50%;
+   right: 32px;
+   font-size: 3rem;
+   color: #000;
+   z-index: 10;
+   cursor: pointer;
+   user-select: none;
+}
+
+.left-arrow {
+   position: absolute;
+   top: 50%;
+   left: 32px;
+   font-size: 3rem;
+   color: #000;
+   z-index: 10;
+   cursor: pointer;
+   user-select: none;
+}
+
+.slide {
+   opacity : 0 ;
+   transition-duration : 1s ease ;
+  }
+
+  .slide.active {
+   opacity : 1 ;
+   transition-duration : 1s ;
+   transform : scale ( 1.08 ) ;
+  }
