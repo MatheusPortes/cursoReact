@@ -19,29 +19,36 @@ export function ProdutosAula5() {
             <Title text="Produtos" />
 
             <ul>
-                <ReactButton
-                    eventOnclick={async () => {
-                        const date = await searchTablet()
-                        setShowcase(date)
-                    }}
-                    title="tablet"
-                />
+                <div className='react-button-out'>
+                    <ReactButton
+                        eventOnclick={async () => {
+                            const date = await searchTablet()
+                            setShowcase(date)
+                        }}
+                        title="tablet"
+                    />
+                </div>
 
-                <ReactButton
-                    eventOnclick={async () => {
-                        const date = await searchSmartphone()
-                        setShowcase(date)
-                    }}
-                    title="smartphone"
-                />
+                <div className='react-button-out'>
+                    <ReactButton
+                        eventOnclick={async () => {
+                            const date = await searchSmartphone()
+                            setShowcase(date)
+                        }}
+                        title="smartphone"
+                    />
+                </div>
 
-                <ReactButton
-                    eventOnclick={async () => {
-                        const date = await searchNotebook()
-                        setShowcase(date)
-                    }}
-                    title="notebook"
-                />
+                <div className='react-button-out'>
+                    <ReactButton
+                        eventOnclick={async () => {
+                            const date = await searchNotebook()
+                            setShowcase(date)
+                        }}
+                        title="notebook"
+                    />
+                </div>
+
             </ul>
             {showcase && (
                 <Showcase

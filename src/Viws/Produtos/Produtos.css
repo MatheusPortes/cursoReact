@@ -15,3 +15,7 @@ ul.box-ul {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.react-button-out {
+  margin: 2rem 1rem;
+}
