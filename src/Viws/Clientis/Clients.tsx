@@ -62,7 +62,9 @@ export const Clientis = () => {
    }, [])
    // console.log('Array 1', A)
    // console.log('Array 2', B)
-   console.log(A.filter( value => B.includes(value)))
+   console.log(A.filter( value => B.includes(value) && (
+      <></>
+   )))
    return (
       <>
          <Title text="Clientes" />
