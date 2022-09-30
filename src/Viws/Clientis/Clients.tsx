@@ -61,10 +61,8 @@ export const Clientis = () => {
       run()
    }, [])
    // console.log('Array 1', A)
-   // console.log('Array 2', B)
-   console.log(A.filter( value => B.includes(value) && (
-      <></>
-   )))
+   console.log('Array 2', B)
+   console.log(A.filter( value => B.includes(value)))
    return (
       <>
          <Title text="Clientes" />
@@ -79,13 +77,13 @@ export const Clientis = () => {
                      <div
                         className={
                            'clientes-button image ' +
-                           (index <= current + range && index >= current)
+                           (B.includes(index))
                               ? 'slide active'
                               : 'slide'
                         }
                         key={id}
                      >
-                        {index <= current + range && index >= current && (
+                        {B.includes(index) && (
                            <ReactButton
                               title={`${firstWord(person.name)}`}
                               eventOnclick={() => {
