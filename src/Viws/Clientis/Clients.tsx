@@ -14,6 +14,10 @@ import './Clients.css'
 export const Clientis = () => {
    const [clientButton, setClientButton] = useState<ISearchUserProducts[]>([])
    const [current, setCurrent] = useState(0)
+   // const [range, setRange] =useState(3)
+   const [A, setA] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+   const [B, setB] = useState([0, 1, 2, 3])
+   const range = 3
 
    const [user, setUser] = useState<ISearchUserProducts>()
 
@@ -30,10 +34,22 @@ export const Clientis = () => {
    }
 
    const nextSlide = () => {
-      setCurrent(current + 1 === clientButton.length - 1 ? 0 : current + 1)
+
+      if (B[B.length - 1] < A.length - 1) {
+         setB(B.map((value) => value + 1))
+
+      } else {
+         let oux = B.map((value) => value + 1)
+         oux.splice(B.length - 1, 1)
+         oux.unshift(0)
+         setB(oux)
+      }
+
+      setCurrent(current + range === clientButton.length - 1 ? 0 : current + 1)
+      // setCurrent(current + range === clientButton.length - 1 ? 0 : current + 1)
    }
    const prevSlide = () => {
-      setCurrent(current === 0 ? clientButton.length - 1 : current - 1)
+      // setCurrent(current - range <= 0 ? clientButton.length - 1 : current - 1)
    }
 
    useEffect(() => {
@@ -44,7 +60,9 @@ export const Clientis = () => {
       }
       run()
    }, [])
-   console.log("current",clientButton)
+   // console.log('Array 1', A)
+   // console.log('Array 2', B)
+   console.log(A.filter( value => B.includes(value)))
    return (
       <>
          <Title text="Clientes" />
@@ -57,11 +75,15 @@ export const Clientis = () => {
                   />
                   {clientButton.map(({ person, id }, index) => (
                      <div
-                        className={"clientes-button image " + (index <= current + 1 && index >= current) ? 'slide active' : 'slide'
+                        className={
+                           'clientes-button image ' +
+                           (index <= current + range && index >= current)
+                              ? 'slide active'
+                              : 'slide'
                         }
                         key={id}
                      >
-                        {(index <= current + 1 && index >= current) && (
+                        {index <= current + range && index >= current && (
                            <ReactButton
                               title={`${firstWord(person.name)}`}
                               eventOnclick={() => {
