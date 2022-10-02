@@ -6,4 +6,5 @@ button.ReactButton-in {
     border-radius: 0.3rem;
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
 }

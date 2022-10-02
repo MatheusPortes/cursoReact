@@ -7,6 +7,8 @@ interface IGlobalContext {
   setLoader: CallableFunction
   listGlobalProdutos?: ISearchProdutoProps[]
   setListGlobalProdutos: CallableFunction
+  range: number[]
+  setRange: CallableFunction
 }
 
 interface Props {
@@ -18,6 +20,7 @@ const ReactContextGlobal = createContext<IGlobalContext>({} as IGlobalContext)
 export function ContextGlobal({ children }:Props) {
   const [loader, setLoader] = useState<boolean>()
   const [listGlobalProdutos, setListGlobalProdutos] = useState<ISearchProdutoProps[]>()
+  const [range, setRange] = useState([0, 1, 2, 3, 4])
 
   useEffect(() => {
     const run = async () => {
@@ -34,6 +37,8 @@ export function ContextGlobal({ children }:Props) {
         setLoader,
         listGlobalProdutos,
         setListGlobalProdutos,
+        range, 
+        setRange,
       }}
     >
       {children}
@@ -53,4 +58,10 @@ export function useListGlobalProdutos() {
   const { listGlobalProdutos, setListGlobalProdutos } =
     useContext(ReactContextGlobal)
   return { listGlobalProdutos, setListGlobalProdutos }
+}
+
+export function useRangeCarrossel() {
+  const { range, setRange } =
+    useContext(ReactContextGlobal)
+  return { range, setRange }
 }
