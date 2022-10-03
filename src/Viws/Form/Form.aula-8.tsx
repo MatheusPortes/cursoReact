@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Post } from '../../API/drag-network-api'
+import { ImputReact } from '../../Components/ImputReact/ImputReact'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { Title } from '../../Components/Title/Title'
 
@@ -150,6 +151,8 @@ export function FormAula8() {
                         value={inputForm.state}
                     />
                 </div>
+
+                <ImputReact className='test' name='test'/>
                 <input type="submit" value={`Enviar`} />
             </form>
             <ReactSpan content="aula - 8" />
