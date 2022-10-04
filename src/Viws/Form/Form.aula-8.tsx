@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Post } from '../../API/drag-network-api'
-import { ImputReact } from '../../Components/ImputReact/ImputReact'
+import { InputReact } from '../../Components/ImputReact/InputReact'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { Title } from '../../Components/Title/Title'
 
@@ -60,7 +60,7 @@ export function FormAula8() {
         <div>
             <Title text="Create User" />
             <form onSubmit={onSubmit}>
-                <div>
+                {/* <div>
                     <label htmlFor="name">Nome</label>
                     <input
                         type="text"
@@ -150,9 +150,11 @@ export function FormAula8() {
                         }}
                         value={inputForm.state}
                     />
+                </div> */}
+                <div className='grid'>
+                <InputReact className='test' name='test' />
                 </div>
-
-                <ImputReact className='test' name='test'/>
+                
                 <input type="submit" value={`Enviar`} />
             </form>
             <ReactSpan content="aula - 8" />
