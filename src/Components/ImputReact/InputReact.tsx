@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './InputReact.css'
 
 type InputReactProps = {
-
+    
 } & React.InputHTMLAttributes<HTMLInputElement>
 
 export function InputReact({ ...props }: InputReactProps) {
@@ -11,16 +11,16 @@ export function InputReact({ ...props }: InputReactProps) {
     const [action, setAction] = useState(false)
 
     const element = useRef<HTMLInputElement>(null)
-    const ts = element.current
 
+    function handleChange(event: any) {
+        console.log(event.targe?.value);
+      }
+
+    
     useEffect(() => {
-        console.log(ts?.addEventListener('change', (e: any ) => e.target.value))
-        // const elementEventChange =  ts?.addEventListener('change', (e: any ) => e.target.value)
-       
-        // if (elementEventChange) setAction(true)
-        // else setAction(false)
+        element.current?.addEventListener('onChange', (e) => handleChange)
+        console.log()
 
-        // console.log(elementEventChange)
     })
 
     return (
@@ -36,6 +36,12 @@ export function InputReact({ ...props }: InputReactProps) {
                     id='input-label'
                     className={`input-react ${className}`}
                     type="text"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setAction(!!event.target?.value)
+                        if(event && props.onChange) {
+                            props.onChange(event)
+                        }
+                    }}
                 />
             </div>
             {/* <p>errror</p> */}

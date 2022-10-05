@@ -152,7 +152,7 @@ export function FormAula8() {
                     />
                 </div> */}
                 <div className='grid'>
-                <InputReact className='test' name='test' />
+                <InputReact className='test' name='test' onChange={() => console.log('aki')}/>
                 </div>
                 
                 <input type="submit" value={`Enviar`} />

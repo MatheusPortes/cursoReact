@@ -29,3 +29,7 @@ input.input-react {
     outline: #916ee3;
     transition: all 0.2s ease-out;
 }
+
+.active {
+    transform: translateY(-2rem);
+}
