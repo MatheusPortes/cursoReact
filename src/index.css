@@ -126,3 +126,8 @@ strong.strong-block {
 .error {
   color: #dd1d1d !important;
 }
+
+input {
+  color: #4b4b4bcf;
+  font-size: 1.7rem;
+}

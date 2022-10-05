@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { Loader } from '../Loader/Loader'
 import './ReactButton.css'
 
-interface IReactButtonProps {
+interface IReactButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     title: string
     eventOnclick?: () => void
 }
 
-export function ReactButton({ title, eventOnclick }: IReactButtonProps) {
+export function ReactButton({ title, eventOnclick, ...props }: IReactButtonProps) {
+    const { className } = props
+
     const [loader, setLoader] = useState(false)
 
     const callback = async () => {
@@ -26,9 +28,11 @@ export function ReactButton({ title, eventOnclick }: IReactButtonProps) {
 
     return (
         <div className="ReactButton">
-            <button className="ReactButton-in" onClick={callback}>
+            <button
+                {...props}
+                className={`ReactButton-in ${className}`}
+            >
                 {title}
-
                 {loader && <Loader />}
             </button>
         </div>

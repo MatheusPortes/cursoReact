@@ -1,18 +1,19 @@
 #input-react-block {
     border: 1px solid transparent;
     position: relative;
-    border-radius: 1rem;
     box-shadow: 0px 1px 3px 1px rgb(64 60 67 / 16%);
     padding: 1rem 1.5rem;
     border-radius: 0.8rem;
+    margin-top: 1.5rem;
 }
 
 .input-react-label {
     position: absolute;
     color: #9d9d9d;
-    font-weight: 600;
+    font-weight: 300;
     background-color: #fff;
     padding: 0.2rem 0.8rem;
+    pointer-events: none;
 }
 
 .grid {
@@ -27,9 +28,10 @@ input.input-react {
 #input-react-block:focus-within label {
     transform: translateY(-2rem);
     outline: #916ee3;
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .active {
     transform: translateY(-2rem);
+    transition: all 0.3s ease-out;
 }

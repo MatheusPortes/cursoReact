@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Post } from '../../API/drag-network-api'
-import { InputReact } from '../../Components/ImputReact/InputReact'
+import { ReactButton } from '../../Components/ReactButton/ReactButton'
+import { InputReact } from '../../Components/ReactImput/ReactImput'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { Title } from '../../Components/Title/Title'
 
@@ -39,123 +40,126 @@ export function FormAula8() {
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        const data = new FormData(event.currentTarget)
+        for (let [key, value] of data.entries()) {
+            console.log(`${key}: ${value}`);
+          }
 
-        const body = {
-            user: {
-                login: 'matheus.lacerda',
-                password: '123456',
-                email: 'portes.matheus@outlook.com',
-            },
-            person: {
-                name: 'Matheus Portes Lacerda',
-                cpf: '01978788637',
-            },
-        }
+        // const body = {
+        //     user: {
+        //         login: 'matheus.lacerda',
+        //         password: '123456',
+        //         email: 'portes.matheus@outlook.com',
+        //     },
+        //     person: {
+        //         name: 'Matheus Portes Lacerda',
+        //         cpf: '01978788637',
+        //     },
+        // }
 
-        const ts = await Post('http://localhost:8080/user', body)
-        console.log(ts)
+        // const ts = await Post('http://localhost:8080/user', body)
+        console.log(data.get('name'))
     }
 
     return (
         <div>
-            <Title text="Create User" />
+            <Title text="Cadastro de Usuário" />
             <form onSubmit={onSubmit}>
-                {/* <div>
-                    <label htmlFor="name">Nome</label>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Martheus Portes Lacerda"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.name}
-                    />
-                    <label htmlFor="name">E-mail</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="email.usar@com.br"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.email}
-                    />
-                    <label htmlFor="name">Senha</label>
-                    <input
-                        type="password"
-                        name="password"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.password}
-                    />
-                    <label htmlFor="name">CEP</label>
-                    <input
-                        type="text"
-                        name="cep"
-                        placeholder="00000-000"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.cep}
-                    />
-                    <label htmlFor="name">Rua</label>
-                    <input
-                        type="text"
-                        name="road"
-                        placeholder="Av. Minas Gerais"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.road}
-                    />
-                    <label htmlFor="number">Numero</label>
-                    <input
-                        type="text"
-                        name="numero"
-                        placeholder="000"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.numero}
-                    />
-                    <label htmlFor="name">Bairro</label>
-                    <input
-                        type="text"
-                        name="district"
-                        placeholder="Olimpus"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.district}
-                    />
-                    <label htmlFor="name">Cidade</label>
-                    <input
-                        type="text"
-                        name="city"
-                        placeholder="São Pedro"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.city}
-                    />
-                    <label htmlFor="name">Estado</label>
-                    <input
-                        type="text"
-                        name="state"
-                        placeholder="Distrito federal"
-                        onChange={(event) => {
-                            setForm(event.target.value, event.target.name)
-                        }}
-                        value={inputForm.state}
-                    />
-                </div> */}
                 <div className='grid'>
-                <InputReact className='test' name='test' onChange={() => console.log('aki')}/>
+                    <InputReact
+                        name='name'
+                        type='text'
+                        label='Nome'
+                        value={inputForm.name}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='email'
+                        type='email'
+                        label='E-mail'
+                        value={inputForm.email}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='password'
+                        type='password'
+                        label='Senha'
+                        value={inputForm.password}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='cep'
+                        type='text'
+                        label='CEP 00000-00'
+                        value={inputForm.password}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='road'
+                        type='text'
+                        label='Rua'
+                        value={inputForm.road}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='numero'
+                        type='number'
+                        label='Número'
+                        value={inputForm.numero}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='district'
+                        type='text'
+                        label='Bairro'
+                        value={inputForm.district}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='city'
+                        type='text'
+                        label='Cidade'
+                        value={inputForm.city}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
+
+                    <InputReact
+                        name='state'
+                        type='text'
+                        label='Estado'
+                        value={inputForm.state}
+                        onChange={(event) => {
+                            setForm(event.target.value, event.target.name)
+                        }}
+                    />
                 </div>
-                
-                <input type="submit" value={`Enviar`} />
+                <ReactButton
+                        title={`Enviar`}
+                        type={'submit'}
+                    />
             </form>
             <ReactSpan content="aula - 8" />
         </div>
