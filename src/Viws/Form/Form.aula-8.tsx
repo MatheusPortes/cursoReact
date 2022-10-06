@@ -19,21 +19,13 @@ interface FormProps {
 
 export function FormAula8() {
     const [inputForm, setInputForm] = useState<FormProps>({} as FormProps)
+    const [inputError, setInputError] = useState<FormProps>({} as FormProps)
 
     const setForm = (value: string, input: string) => {
         setInputForm((prev) => {
             return { ...prev, [input]: value }
         })
     }
-
-    // const inputError = (value:<T>):boolean => {
-    //     if(value) {
-    //         return false
-    //     } else {
-    //         return true
-    //     }
-        
-    // }
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -63,11 +55,9 @@ export function FormAula8() {
                         name='name'
                         type='text'
                         label='Nome'
-                        value={inputForm.name}
+                        error={inputForm.name}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -75,11 +65,8 @@ export function FormAula8() {
                         name='email'
                         type='email'
                         label='E-mail'
-                        value={inputForm.email}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -87,11 +74,8 @@ export function FormAula8() {
                         name='password'
                         type='password'
                         label='Senha'
-                        value={inputForm.password}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -99,11 +83,8 @@ export function FormAula8() {
                         name='cep'
                         type='text'
                         label='CEP 00000-00'
-                        value={inputForm.password}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -111,11 +92,8 @@ export function FormAula8() {
                         name='road'
                         type='text'
                         label='Rua'
-                        value={inputForm.road}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -123,11 +101,8 @@ export function FormAula8() {
                         name='numero'
                         type='number'
                         label='Número'
-                        value={inputForm.numero}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -135,11 +110,8 @@ export function FormAula8() {
                         name='district'
                         type='text'
                         label='Bairro'
-                        value={inputForm.district}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -147,11 +119,8 @@ export function FormAula8() {
                         name='city'
                         type='text'
                         label='Cidade'
-                        value={inputForm.city}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
 
@@ -159,18 +128,15 @@ export function FormAula8() {
                         name='state'
                         type='text'
                         label='Estado'
-                        value={inputForm.state}
                         onChange={(event) => {
-                            if(event.target.value) {
-                                setForm(event.target.value, event.target.name)
-                            }
+                            setForm(event.target.value, event.target.name)
                         }}
                     />
                 </div>
                 <ReactButton
-                        title={`Enviar`}
-                        type={'submit'}
-                    />
+                    title={`Enviar`}
+                    type={'submit'}
+                />
             </form>
             <ReactSpan content="aula - 8" />
         </div>
