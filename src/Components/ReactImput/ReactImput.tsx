@@ -3,15 +3,14 @@ import './ReactImput.css'
 
 interface InputReactProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string
-    error?: any
+    error?: string
 }
 
 export function InputReact({ label, error, ...props }: InputReactProps) {
-    const { name, className, type } = props
+    const { name, className } = props
 
     const [action, setAction] = useState(false)
-    // const [error, setError] = useState(false)
-// console.log(error === undefined || error === '' ? true : false )
+
     return (
         <>
             <div id={`input-react-block`}>
@@ -30,9 +29,9 @@ export function InputReact({ label, error, ...props }: InputReactProps) {
                         setAction(!!event.target?.value)
                     }}
                 />
-                {/* {
-                    error && <p>error</p>
-                } */}
+                {
+                    error && <p className='warning'>{error}</p>
+                }
             </div>
         </>
     )

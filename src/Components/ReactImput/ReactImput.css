@@ -2,7 +2,7 @@
     border: 1px solid transparent;
     position: relative;
     box-shadow: 0px 1px 3px 1px rgb(64 60 67 / 16%);
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem 1.5rem;
     border-radius: 0.8rem;
     margin-top: 1.5rem;
 }
@@ -16,12 +16,7 @@
     pointer-events: none;
 }
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-input.input-react {
+.input-react {
     border: none;
 }
 
@@ -34,4 +29,12 @@ input.input-react {
 .active {
     transform: translateY(-2rem);
     transition: all 0.3s ease-out;
+}
+
+.warning {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #f31717;
+    position: absolute;
+    padding: 0 0.8rem;
 }

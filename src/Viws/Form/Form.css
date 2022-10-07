@@ -4,3 +4,13 @@
     border-radius: 1rem;
     box-shadow: 3px 2px 5px 1px rgb(64 60 67 / 16%);
 }
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.grid-item {
+    margin: 0 1rem;
+}
