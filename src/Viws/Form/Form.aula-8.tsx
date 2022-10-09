@@ -19,6 +19,18 @@ interface FormProps {
     state: string
 }
 
+interface ErrorProps {
+    name: string
+    email: string
+    password: string
+    cep: string
+    road: string
+    numero: string
+    district: string
+    city: string
+    state: string
+}
+
 export interface IError {
     messageError: string
     validate: (field: string, inputForm: object) => boolean
@@ -27,7 +39,7 @@ export interface IError {
 
 export function FormAula8() {
     const [inputForm, setInputForm] = useState<FormProps>({} as FormProps)
-    const [formErrors, setFormErrors] = useState({} as any)
+    const [formErrors, setFormErrors] = useState({} as ErrorProps)
 
     const converter = (value: string, type: string): number | string | boolean => {
         if ((value === `true` || value === `false`) && type !== `password`) {
@@ -47,9 +59,12 @@ export function FormAula8() {
         })
     }
 
-    function validate(values: any) {
+    function validate<T extends Record<string, any>>(values: T) {
         let errors: any = {}
-        // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
+
+        const ts = Object.keys(values).map( values => {
+            
+        })
 
         if (!values.name) {
             errors.name = "Username is required !"
@@ -59,8 +74,32 @@ export function FormAula8() {
             errors.email = "Email is required !"
         }
 
-        if (!values.Password) {
+        if (!values.password) {
             errors.password = "Password is required !"
+        }
+
+        if (!values.cep) {
+            errors.cep = "cep is required !"
+        }
+
+        if (!values.road) {
+            errors.road = "road is required !"
+        }
+
+        if (!values.numero) {
+            errors.numero = "numero is required !"
+        }
+
+        if (!values.district) {
+            errors.district = "district is required !"
+        }
+
+        if (!values.city) {
+            errors.city = "city is required !"
+        }
+
+        if (!values.state) {
+            errors.state = "state is required !"
         }
 
         return errors
@@ -68,8 +107,10 @@ export function FormAula8() {
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        
-        setFormErrors(validate(inputForm))
+
+        const error: ErrorProps = validate(inputForm)
+
+        setFormErrors(error)
 
         // const body = {
         //     user: {
@@ -85,7 +126,8 @@ export function FormAula8() {
 
         // const ts = await Post('http://localhost:8080/user', body)
     }
-
+console.log(formErrors)
+console.log(inputForm)
     return (
         <>
             <Title text="Cadastro de Usuário" />
@@ -109,6 +151,7 @@ export function FormAula8() {
                             name='email'
                             type='email'
                             label='E-mail'
+                            error={formErrors.email}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -120,6 +163,7 @@ export function FormAula8() {
                             name='password'
                             type='password'
                             label='Senha'
+                            error={formErrors.password}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -131,6 +175,7 @@ export function FormAula8() {
                             name='cep'
                             type='text'
                             label='CEP 00000-00'
+                            error={formErrors.cep}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -142,6 +187,7 @@ export function FormAula8() {
                             name='road'
                             type='text'
                             label='Rua'
+                            error={formErrors.road}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -153,6 +199,7 @@ export function FormAula8() {
                             name='numero'
                             type='number'
                             label='Número'
+                            error={formErrors.numero}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -164,6 +211,7 @@ export function FormAula8() {
                             name='district'
                             type='text'
                             label='Bairro'
+                            error={formErrors.district}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -175,6 +223,7 @@ export function FormAula8() {
                             name='city'
                             type='text'
                             label='Cidade'
+                            error={formErrors.city}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
@@ -186,6 +235,7 @@ export function FormAula8() {
                             name='state'
                             type='text'
                             label='Estado'
+                            error={formErrors.state}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
