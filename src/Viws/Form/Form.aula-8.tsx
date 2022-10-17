@@ -5,6 +5,7 @@ import { ReactButton } from '../../Components/ReactButton/ReactButton'
 import { InputReact } from '../../Components/ReactImput/ReactImput'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { Title } from '../../Components/Title/Title'
+import { ValidationForm } from '../../ValidationForm/ValidationForm'
 import './Form.css'
 
 interface FormProps {
@@ -25,7 +26,7 @@ interface ErrorProps {
     password: string
     cep: string
     road: string
-    numero: string
+    number: string
     district: string
     city: string
     state: string
@@ -40,6 +41,8 @@ export interface IError {
 export function FormAula8() {
     const [inputForm, setInputForm] = useState<FormProps>({} as FormProps)
     const [formErrors, setFormErrors] = useState({} as ErrorProps)
+
+    const ER = new ValidationForm
 
     const converter = (value: string, type: string): number | string | boolean => {
         if ((value === `true` || value === `false`) && type !== `password`) {
@@ -59,58 +62,18 @@ export function FormAula8() {
         })
     }
 
-    function validate<T extends Record<string, any>>(values: T) {
-        let errors: any = {}
-
-        const ts = Object.keys(values).map( values => {
-            
-        })
-
-        if (!values.name) {
-            errors.name = "Username is required !"
-        }
-
-        if (!values.email) {
-            errors.email = "Email is required !"
-        }
-
-        if (!values.password) {
-            errors.password = "Password is required !"
-        }
-
-        if (!values.cep) {
-            errors.cep = "cep is required !"
-        }
-
-        if (!values.road) {
-            errors.road = "road is required !"
-        }
-
-        if (!values.numero) {
-            errors.numero = "numero is required !"
-        }
-
-        if (!values.district) {
-            errors.district = "district is required !"
-        }
-
-        if (!values.city) {
-            errors.city = "city is required !"
-        }
-
-        if (!values.state) {
-            errors.state = "state is required !"
-        }
-
-        return errors
-    }
+    
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        const error: ErrorProps = validate(inputForm)
+        const schemeErrors: ErrorProps = {
+            name: ER.isString('name','Matheus Portes','Valor invalido').run(),
+            number: ER.isNumber('number','test','Valor invalido').run(),
+            email: ER.isRequired('email',undefined,'Obrigadorio!').run(),
+        }
 
-        setFormErrors(error)
+        setFormErrors(schemeErrors)
 
         // const body = {
         //     user: {
@@ -126,8 +89,7 @@ export function FormAula8() {
 
         // const ts = await Post('http://localhost:8080/user', body)
     }
-console.log(formErrors)
-console.log(inputForm)
+
     return (
         <>
             <Title text="Cadastro de Usuário" />
@@ -199,7 +161,7 @@ console.log(inputForm)
                             name='numero'
                             type='number'
                             label='Número'
-                            error={formErrors.numero}
+                            error={formErrors.number}
                             onChange={(event) => {
                                 setForm(event.target.value, event.target.name, event.target.type)
                             }}
