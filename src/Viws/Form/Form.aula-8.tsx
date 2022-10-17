@@ -32,12 +32,6 @@ interface ErrorProps {
     state: string
 }
 
-export interface IError {
-    messageError: string
-    validate: (field: string, inputForm: object) => boolean
-    ts: any
-}
-
 export function FormAula8() {
     const [inputForm, setInputForm] = useState<FormProps>({} as FormProps)
     const [formErrors, setFormErrors] = useState({} as ErrorProps)
@@ -62,18 +56,32 @@ export function FormAula8() {
         })
     }
 
-    
+    const ts = ER.isObject<ErrorProps>(
+        {
+            cep: '',
+            city: '',
+            district: '',
+            email: ER.isEmail('value@outlook.com', 'Valor Invalidos!').isString('Tipo Invalidos!').run(),
+            name: '',
+            number: '',
+            password: '',
+            road: '',
+            state: ''
+        }
+    )
+
+    console.log(ts)
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        const schemeErrors: ErrorProps = {
-            name: ER.isString('name','Matheus Portes','Valor invalido').run(),
-            number: ER.isNumber('number','test','Valor invalido').run(),
-            email: ER.isRequired('email',undefined,'Obrigadorio!').run(),
-        }
+        // const schemeErrors: ErrorProps = {
+        //     name: ER.isString('name','Matheus Portes','Valor invalido').run(),
+        //     number: ER.isNumber('number','test','Valor invalido').run(),
+        //     email: ER.isRequired('email',undefined,'Obrigadorio!').run(),
+        // }
 
-        setFormErrors(schemeErrors)
+        // setFormErrors(schemeErrors)
 
         // const body = {
         //     user: {

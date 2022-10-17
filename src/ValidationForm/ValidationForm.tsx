@@ -1,57 +1,90 @@
+const regEmail = /^[a-z0-9\.\-\_]{2,}@[a-z0-9\.\-\_]+\.(com|edu|org)(\.br)?$/gm
 
 type ObjectErrors = {
-    [Keys:string]: string | number | boolean
+    [Keys: string]: any
 }
 
 export class ValidationForm {
     // private errors: ObjectErrors = {}
-    private errors: any 
-    private fieldNow: string = ''
-    private valuedNow: any
+    private errors: any
+    private valuedNow?: any = undefined
 
-    isNumber(fieldName: string, value: any, mensagen: string) {
-        this.fieldNow = fieldName
-        console.log(isNaN(Number(value)))
+    private HasValue () {
+        
+    }
+
+    isObject<T extends ObjectErrors>(object: T) {
+        // for (const key in object) {
+        //     if(object[key] == undefined) {
+        //         delete object[key]
+        //     }
+        // }
+
+        return object
+    }
+
+    isNumber(mensagen: string, value?: any) {
+        this.errors = undefined
+
+        if(this.valuedNow === undefined && value === undefined) {
+            this.errors = 'Value not defined.'
+            return this
+        }
+
+        if(value === undefined && this.valuedNow) {
+            value = this.valuedNow
+        }
+
+        this.valuedNow = value
+
         if (isNaN(Number(value))) {
-            // this.errors = {  ...this.errors , [fieldName]: mensagen }
             this.errors = mensagen
         }
 
         return this
     }
 
-    isString(fieldName: string, value: any, mensagen: string) {
-        this.fieldNow = fieldName
+    isString(mensagen: string, value?: any) {
+        this.errors = undefined
 
         if ((value === `true` || value === `false`)) {
-            // this.errors = {  ...this.errors , [fieldName]: mensagen }
             this.errors = mensagen
         }
 
-        if (Number(value)) {
-            // this.errors = {  ...this.errors , [fieldName]: mensagen }
+        if (Number.isFinite(Number(Number(value)))) {
+            this.errors = mensagen
+        }
+
+        if (typeof value !== 'string') {
             this.errors = mensagen
         }
 
         return this
     }
 
-    isBoolean(fieldName: string, value: any, mensagen: string) {
-        this.fieldNow = fieldName
+    isBoolean(mensagen: string, value?: any) {
+        this.errors = undefined
 
         if (value !== `true` || value !== `false`) {
-            // this.errors = {  ...this.errors , [fieldName]: mensagen }
             this.errors = mensagen
         }
 
         return this
     }
 
-    isRequired(fieldName: string, value: any, mensagen: string) {
-        this.fieldNow = fieldName
+    isEmail(mensagen: string, value?: any ) {
+        this.errors = undefined
+
+        if(!regEmail.test(value)) {
+            this.errors = mensagen
+        }
+        return this
+    }
+
+    isRequired(mensagen: string, value?: any) {
+        this.errors = undefined
 
         if (!value) {
-            // this.errors = {  ...this.errors , [fieldName]: mensagen }
             this.errors = mensagen
         }
 
@@ -66,8 +99,8 @@ export class ValidationForm {
 function validate<T extends Record<string, any>>(values: T) {
     let errors: any = {}
 
-    const ts = Object.keys(values).map( values => {
-        
+    const ts = Object.keys(values).map(values => {
+
     })
 
     if (!values.name) {
