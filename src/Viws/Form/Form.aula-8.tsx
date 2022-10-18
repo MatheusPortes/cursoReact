@@ -43,7 +43,7 @@ export function FormAula8() {
             return JSON.parse(value)
         }
 
-        if (Number(value) && type !== `password`) {
+        if (Number(value) && type !== `password` && type !== `text`) {
             return Number(value)
         }
 
@@ -56,31 +56,48 @@ export function FormAula8() {
         })
     }
 
-    const ts = ER.isObject<ErrorProps>(
-        {
-            cep: '',
-            city: '',
-            district: '',
-            email: ER.isEmail('value@outlook.com', 'Valor Invalidos!').isString('Tipo Invalidos!').run(),
-            name: '',
-            number: '',
-            password: '',
-            road: '',
-            state: ''
-        }
-    )
-
-    console.log(ts)
-
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        // const schemeErrors: ErrorProps = {
-        //     name: ER.isString('name','Matheus Portes','Valor invalido').run(),
-        //     number: ER.isNumber('number','test','Valor invalido').run(),
-        //     email: ER.isRequired('email',undefined,'Obrigadorio!').run(),
-        // }
+        const verified = ER.isObject<ErrorProps>(
+            {
+                cep: ER.isString('Valor para CEP Invalidos!', inputForm.cep)
+                    .isRequired('Campo CEP Obrigatorio!')
+                    .run(),
+                city: ER.isString('Valor para Cidade Invalidos!', inputForm.city)
+                    .isRequired('Campo Cidade Obrigatorio!')
+                    .run(),
+                district: ER.isString('Valor para Bairro Invalidos!', inputForm.district)
+                    .isRequired('Campo Bairro Obrigatorio!')
+                    .run(),
+                email: ER.isEmail('Valor para E-mail Invalidos!', inputForm.email)
+                    .isString('Tipo E-mail Invalidos!')
+                    .isRequired('Campo E-mail Obrigatorio!')
+                    .run(),
+                name: ER.isString('Valor para Nome Invalidos!', inputForm.name)
+                    .isRequired('Campo Nome Obrigatorio!')
+                    .run(),
+                number: ER.isNumber('Valor para Numero Invalidos!', inputForm.numero)
+                    .isRequired('Campo Numero Obrigatorio!')
+                    .run(),
+                password: ER.isRequired('Campo password Obrigatorio!', inputForm.password)
+                    .run(),
+                road: ER.isString('Valor para Rua Invalidos!', inputForm.road)
+                    .isRequired('Campo Rua Obrigatorio!')
+                    .run(),
+                state: ER.isString('Valor para Estado Invalidos!', inputForm.state)
+                    .isRequired('Campo Estado Obrigatorio!')
+                    .run(),
+            }
+        )
+console.log(verified)
+console.log(inputForm)
 
+        if(verified.errors) {
+            setFormErrors(verified.ObjectErrors)
+        } else {
+
+        }
         // setFormErrors(schemeErrors)
 
         // const body = {

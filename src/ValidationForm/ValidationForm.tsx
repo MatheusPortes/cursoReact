@@ -1,41 +1,49 @@
-const regEmail = /^[a-z0-9\.\-\_]{2,}@[a-z0-9\.\-\_]+\.(com|edu|org)(\.br)?$/gm
+//eslint-disable-next-line
+const regEmail = /^[a-z0-9\.\-\_]{2,}@[a-z0-9\.\-\_]+\.(com|edu|org)(\.br)?$/m
 
 type ObjectErrors = {
     [Keys: string]: any
 }
 
 export class ValidationForm {
-    // private errors: ObjectErrors = {}
     private errors: any
     private valuedNow?: any = undefined
 
-    private HasValue () {
-        
-    }
-
-    isObject<T extends ObjectErrors>(object: T) {
-        // for (const key in object) {
-        //     if(object[key] == undefined) {
-        //         delete object[key]
-        //     }
-        // }
-
-        return object
-    }
-
-    isNumber(mensagen: string, value?: any) {
-        this.errors = undefined
-
+    private HasValue (value: any) {
         if(this.valuedNow === undefined && value === undefined) {
             this.errors = 'Value not defined.'
             return this
         }
+    }
 
-        if(value === undefined && this.valuedNow) {
-            value = this.valuedNow
+    private DefaultCheck (value: any) {
+
+        if(value) {
+            this.valuedNow = value
         }
 
-        this.valuedNow = value
+        if(value === undefined && this.valuedNow) {
+            return value = this.valuedNow
+        }
+
+        return value
+    }
+
+    isObject<T extends ObjectErrors>(ObjectErrors: T) {
+        let errors: boolean = false
+        for (const key in ObjectErrors) {
+            if(ObjectErrors[key] !== undefined) {
+                errors = true
+            }
+        }
+
+        return { ObjectErrors, errors }
+    }
+
+    isNumber(mensagen: string, value?: any) {
+        
+        this.HasValue(value)
+        value = this.DefaultCheck(value)
 
         if (isNaN(Number(value))) {
             this.errors = mensagen
@@ -45,16 +53,17 @@ export class ValidationForm {
     }
 
     isString(mensagen: string, value?: any) {
-        this.errors = undefined
 
+        this.HasValue(value)
+        value = this.DefaultCheck(value)
         if ((value === `true` || value === `false`)) {
             this.errors = mensagen
         }
-
-        if (Number.isFinite(Number(Number(value)))) {
+        
+        if (Number.isFinite(value)) {
             this.errors = mensagen
         }
-
+        
         if (typeof value !== 'string') {
             this.errors = mensagen
         }
@@ -63,7 +72,9 @@ export class ValidationForm {
     }
 
     isBoolean(mensagen: string, value?: any) {
-        this.errors = undefined
+        
+        this.HasValue(value)
+        value = this.DefaultCheck(value)
 
         if (value !== `true` || value !== `false`) {
             this.errors = mensagen
@@ -73,7 +84,9 @@ export class ValidationForm {
     }
 
     isEmail(mensagen: string, value?: any ) {
-        this.errors = undefined
+        
+        this.HasValue(value)
+        value = this.DefaultCheck(value)
 
         if(!regEmail.test(value)) {
             this.errors = mensagen
@@ -82,7 +95,9 @@ export class ValidationForm {
     }
 
     isRequired(mensagen: string, value?: any) {
-        this.errors = undefined
+
+        this.HasValue(value)
+        value = this.DefaultCheck(value)
 
         if (!value) {
             this.errors = mensagen
@@ -92,52 +107,9 @@ export class ValidationForm {
     }
 
     run() {
-        return this.errors
+        const resErrors = this.errors
+        this.valuedNow = undefined
+        this.errors = undefined
+        return resErrors
     }
-}
-
-function validate<T extends Record<string, any>>(values: T) {
-    let errors: any = {}
-
-    const ts = Object.keys(values).map(values => {
-
-    })
-
-    if (!values.name) {
-        errors.name = "Username is required !"
-    }
-
-    if (!values.email) {
-        errors.email = "Email is required !"
-    }
-
-    if (!values.password) {
-        errors.password = "Password is required !"
-    }
-
-    if (!values.cep) {
-        errors.cep = "cep is required !"
-    }
-
-    if (!values.road) {
-        errors.road = "road is required !"
-    }
-
-    if (!values.numero) {
-        errors.numero = "numero is required !"
-    }
-
-    if (!values.district) {
-        errors.district = "district is required !"
-    }
-
-    if (!values.city) {
-        errors.city = "city is required !"
-    }
-
-    if (!values.state) {
-        errors.state = "state is required !"
-    }
-
-    return errors
 }
