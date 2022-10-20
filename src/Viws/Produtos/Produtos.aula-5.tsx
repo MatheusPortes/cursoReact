@@ -16,7 +16,7 @@ export function ProdutosAula5() {
 
     return (
         <div>
-            <Title text="Produtos" />
+            <Title text="Produtos" type='h1' />
 
             <ul>
                 <div className='react-button-out'>

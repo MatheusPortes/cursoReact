@@ -10,7 +10,7 @@ export function ProdutosAula7() {
 
     return (
         <div>
-            <Title text="Funções Globais - Listagem de Produtos" />
+            <Title text="Funções Globais - Listagem de Produtos" type='h1' />
             <div className="box">
                 <ul className="box-ul">
                     {listGlobalProdutos &&

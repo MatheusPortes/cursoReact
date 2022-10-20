@@ -43,7 +43,7 @@ export function ProdutosAula6() {
 
     return (
         <div>
-            <Title text="Preferencia dos Produtos" />
+            <Title text="Preferencia dos Produtos" type='h1' />
             <ul>
                 <ReactButton
                     eventOnclick={async () => {

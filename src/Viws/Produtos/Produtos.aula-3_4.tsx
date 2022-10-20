@@ -22,7 +22,7 @@ export function ProdutosAula3_4() {
 
     return (
         <div className='container'>
-            <Title text="Produtos" />
+            <Title text="Produtos" type='h1' />
             <div className='box-card'>
                 {products.map((value) => (
                     <Card key={value.id} infoCard={value} id={value.id} />

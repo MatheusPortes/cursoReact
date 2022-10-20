@@ -4,7 +4,7 @@ import { Title } from '../../Components/Title/Title'
 export const Home = () => {
     return (
         <div>
-            <Title text="Home" />
+            <Title text="Home" type='h1' />
             <strong>
                 <p>Esta é a Home do site</p>
             </strong>

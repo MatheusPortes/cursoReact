@@ -67,7 +67,7 @@ export const Clientis = () => {
 
    return (
       <>
-         <Title text="Clientes" />
+         <Title text="Clientes" type='h1'/>
 
          <div className="clients">
             <div className="clients-header">

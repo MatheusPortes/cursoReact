@@ -29,10 +29,10 @@ export function InputReact({ label, error, ...props }: InputReactProps) {
                         setAction(!!event.target?.value)
                     }}
                 />
+            </div>
                 {
                     error && <p className='warning'>{error}</p>
                 }
-            </div>
         </>
     )
 }
