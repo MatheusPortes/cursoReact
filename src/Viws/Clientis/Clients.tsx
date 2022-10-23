@@ -67,7 +67,7 @@ export const Clientis = () => {
 
    return (
       <>
-         <Title text="Clientes" type='h1'/>
+         <Title text="Clientes" type='h1' />
 
          <div className="clients">
             <div className="clients-header">
@@ -89,7 +89,7 @@ export const Clientis = () => {
                            {range.includes(index) && (
                               <ReactButton
                                  title={`${firstWord(person.name)}`}
-                                 eventOnclick={() => {
+                                 onClick={() => {
                                     personChanger(id)
                                  }}
                               />

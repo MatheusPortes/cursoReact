@@ -13,4 +13,5 @@
 
 .grid-item {
     margin: 0 1rem;
+    min-height: 8.5rem;
 }

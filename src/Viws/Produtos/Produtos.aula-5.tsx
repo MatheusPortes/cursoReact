@@ -21,7 +21,7 @@ export function ProdutosAula5() {
             <ul>
                 <div className='react-button-out'>
                     <ReactButton
-                        eventOnclick={async () => {
+                        onClick={async () => {
                             const date = await searchTablet()
                             setShowcase(date)
                         }}
@@ -31,7 +31,7 @@ export function ProdutosAula5() {
 
                 <div className='react-button-out'>
                     <ReactButton
-                        eventOnclick={async () => {
+                        onClick={async () => {
                             const date = await searchSmartphone()
                             setShowcase(date)
                         }}
@@ -41,7 +41,7 @@ export function ProdutosAula5() {
 
                 <div className='react-button-out'>
                     <ReactButton
-                        eventOnclick={async () => {
+                        onClick={async () => {
                             const date = await searchNotebook()
                             setShowcase(date)
                         }}

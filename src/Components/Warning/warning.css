@@ -1,0 +1,61 @@
+.warning-alert {
+    padding: 1rem;
+    border-left: solid;
+    border-radius: 0.4rem;
+    box-shadow: 1.5px 1px 2px 1px #e3e3e361;
+    bottom: 7rem;
+    width: 35rem;
+    background-color: #fff;
+    position: absolute;
+    transform: translateX(-45rem);
+    z-index: 99;
+}
+
+.warning {
+    border-color: #ffc107;
+    box-shadow: 1.5px 1px 2px 1px #ffc107;
+}
+
+.success {
+    border-color: #28a745;
+    box-shadow: 1.5px 1px 2px 1px #d4edda;
+    color: #423200;
+}
+
+.error {
+    border-color: #dc3545;
+    box-shadow: 1.5px 1px 2px 1px #f8d7da;
+}
+
+.info {
+    border-color: #17a2b8;
+    box-shadow: 1.5px 1px 2px 1px #d1ecf1;
+}
+
+.active-warning {
+    animation: warning 4s cubic-bezier(0.5, 1.00, 0, 1) alternate 2;
+}
+
+.active-warning:hover {
+    animation-play-state: paused;
+}
+
+@keyframes warning {
+    /* from {   
+    }
+
+    to {
+    } */
+
+    0% {
+        /*from*/
+        transform: translateX(-45rem);
+    }
+
+    50% {}
+
+    100% {
+        /*to*/
+        transform: translateX(10rem);
+    }
+}

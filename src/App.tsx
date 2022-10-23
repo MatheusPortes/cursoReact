@@ -3,6 +3,7 @@ import { Heades } from './Components/Header/Heades'
 import { PageBase } from './Components/PageBase/PageBase'
 import { dumbRoutes } from './Rouder/Rouder'
 import { Footer } from './Components/Footer/Footer'
+import { ContextWarning } from './ReactContext/ContextWarning'
 
 function App() {
     const { pathname } = window.location
@@ -10,11 +11,13 @@ function App() {
 
     return (
         <ContextGlobal>
-            <Heades />
-            <PageBase>
-                <Component />
-            </PageBase>
-            <Footer />
+            <ContextWarning>
+                <Heades />
+                <PageBase>
+                    <Component />
+                </PageBase>
+                <Footer />
+            </ContextWarning>
         </ContextGlobal>
     )
 }

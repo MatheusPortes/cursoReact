@@ -4,32 +4,26 @@ import './ReactButton.css'
 
 interface IReactButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     title: string
-    eventOnclick?: () => void
 }
 
-export function ReactButton({ title, eventOnclick, ...props }: IReactButtonProps) {
+export function ReactButton({ title, ...props }: IReactButtonProps) {
     const { className } = props
 
     const [loader, setLoader] = useState(false)
-
-    const callback = async () => {
-        if (eventOnclick) {
-            setLoader((prev) => {
-                return (prev = true)
-            })
-
-            await eventOnclick()
-
-            setLoader((prev) => {
-                return (prev = false)
-            })
-        }
-    }
 
     return (
         <div className="ReactButton">
             <button
                 {...props}
+                onClick={async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                    setLoader(true)
+
+                    if (event && props.onClick) {
+                        await props.onClick(event)
+                    }
+
+                    setLoader(false)
+                }}
                 className={`ReactButton-in ${className}`}
             >
                 {title}

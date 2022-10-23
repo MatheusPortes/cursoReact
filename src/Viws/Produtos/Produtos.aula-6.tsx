@@ -46,7 +46,8 @@ export function ProdutosAula6() {
             <Title text="Preferencia dos Produtos" type='h1' />
             <ul>
                 <ReactButton
-                    eventOnclick={async () => {
+                    className='box-ul-box'
+                    onClick={async () => {
                         const date = await searchSmartphone()
                         setShowcase(date)
                     }}
@@ -54,7 +55,8 @@ export function ProdutosAula6() {
                 />
 
                 <ReactButton
-                    eventOnclick={async () => {
+                    className='box-ul-box'
+                    onClick={async () => {
                         const date = await searchNotebook()
                         setShowcase(date)
                     }}

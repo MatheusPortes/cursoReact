@@ -20,6 +20,7 @@ export function InputReact({ label, error, ...props }: InputReactProps) {
                 </label>
                 <input
                     {...props}
+                    autoComplete='on'
                     className={`input-react ${className}`}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         if (event && props.onChange) {
@@ -31,7 +32,7 @@ export function InputReact({ label, error, ...props }: InputReactProps) {
                 />
             </div>
                 {
-                    error && <p className='warning'>{error}</p>
+                    error && <p className='input-warning'>{error}</p>
                 }
         </>
     )

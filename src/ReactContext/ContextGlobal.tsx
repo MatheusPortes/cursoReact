@@ -17,7 +17,7 @@ interface Props {
 
 const ReactContextGlobal = createContext<IGlobalContext>({} as IGlobalContext)
 
-export function ContextGlobal({ children }:Props) {
+export function ContextGlobal({ children }: Props) {
   const [loader, setLoader] = useState<boolean>()
   const [listGlobalProdutos, setListGlobalProdutos] = useState<ISearchProdutoProps[]>()
   const [range, setRange] = useState([0, 1, 2, 3, 4])
@@ -28,7 +28,7 @@ export function ContextGlobal({ children }:Props) {
       setListGlobalProdutos(data)
     }
     run()
-  },[])
+  }, [])
 
   return (
     <ReactContextGlobal.Provider
@@ -37,7 +37,7 @@ export function ContextGlobal({ children }:Props) {
         setLoader,
         listGlobalProdutos,
         setListGlobalProdutos,
-        range, 
+        range,
         setRange,
       }}
     >
@@ -46,7 +46,7 @@ export function ContextGlobal({ children }:Props) {
   )
 }
 
-export function useLoader(params:boolean) {
+export function useLoader(params: boolean) {
   const { loader, setLoader } = useContext(ReactContextGlobal)
   if (params) {
     setLoader(params)
@@ -55,13 +55,11 @@ export function useLoader(params:boolean) {
 }
 
 export function useListGlobalProdutos() {
-  const { listGlobalProdutos, setListGlobalProdutos } =
-    useContext(ReactContextGlobal)
+  const { listGlobalProdutos, setListGlobalProdutos } = useContext(ReactContextGlobal)
   return { listGlobalProdutos, setListGlobalProdutos }
 }
 
 export function useRangeCarrossel() {
-  const { range, setRange } =
-    useContext(ReactContextGlobal)
+  const { range, setRange } = useContext(ReactContextGlobal)
   return { range, setRange }
 }
