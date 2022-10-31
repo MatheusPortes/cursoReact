@@ -11,23 +11,23 @@
     z-index: 99;
 }
 
-.warning {
+.warning-warning {
     border-color: #ffc107;
     box-shadow: 1.5px 1px 2px 1px #ffc107;
 }
 
-.success {
+.warning-success {
     border-color: #28a745;
     box-shadow: 1.5px 1px 2px 1px #d4edda;
     color: #423200;
 }
 
-.error {
+.warning-error {
     border-color: #dc3545;
     box-shadow: 1.5px 1px 2px 1px #f8d7da;
 }
 
-.info {
+.warning-info {
     border-color: #17a2b8;
     box-shadow: 1.5px 1px 2px 1px #d1ecf1;
 }

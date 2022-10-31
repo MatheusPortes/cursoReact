@@ -8,7 +8,7 @@ type WarningProps = {
 
 export function Warning( { message, type, active }: WarningProps ) {
     return (
-        <div className={active ? `warning-alert active-warning ${type}` : "warning-alert"}>
+        <div className={active ? `warning-alert active-warning warning-${type}` : "warning-alert"}>
             {message}
         </div>
     )
