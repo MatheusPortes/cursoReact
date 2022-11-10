@@ -45,7 +45,7 @@ export type CreateUserProps = {
 
 export async function createUser(params: CreateUserProps) {
     const data: any = await Post(`${baseURL}`, params)
-    if(data.statusCode !== 200 ) {
+    if(data && data.statusCode !== 200 ) {
         const error = new Error(data.message)
         throw error
     }

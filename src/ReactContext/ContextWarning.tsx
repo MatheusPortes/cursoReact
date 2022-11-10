@@ -16,12 +16,14 @@ type WarningProps = {
 
 type ReactContextWarningPrpos = {
     activateWarning: ({ type, message }: WarningProps) => void
+    action: boolean | undefined,
+    setAction: CallableFunction
 }
 
 export const ReactContextWarning = createContext({} as ReactContextWarningPrpos)
 
 export function ContextWarning({ children }: Props) {
-    const [active, setActive] = useState(false)
+    const [action, setAction] = useState<boolean>()
     const [type, setType] = useState<'success' | 'error' | 'info' | 'warning'>()
     const [message, setMessage] = useState('')
 
@@ -29,17 +31,19 @@ export function ContextWarning({ children }: Props) {
         setMessage(message)
         setType(type)
 
-        setActive(!active)
-        setTimeout(() => setActive(false), 10000)
+        setAction(!action)
+        setTimeout(() => setAction(false), 10000)
     }
 
     return (
         <ReactContextWarning.Provider
             value={{
-                activateWarning
+                activateWarning,
+                action,
+                setAction
             }}
         >
-            <Warning active={active} message={message} type={type && type} />
+            <Warning active={action} message={message} type={type && type} />
             {children}
         </ReactContextWarning.Provider>
     )
@@ -47,6 +51,6 @@ export function ContextWarning({ children }: Props) {
 
 
 export function useWarning() {
-    const { activateWarning } = useContext(ReactContextWarning)
-    return { activateWarning }
+    const { activateWarning, action, setAction } = useContext(ReactContextWarning)
+    return { activateWarning, action, setAction }
 }
