@@ -1,20 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useWarning } from 'src/ReactContext/ContextWarning'
 import { ReactButton } from '../../Components/ReactButton/ReactButton'
 import { InputReact } from '../../Components/ReactImput/ReactImput'
 import { ReactSpan } from '../../Components/ReactSpan/ReactSpan'
 import { Title } from '../../Components/Title/Title'
-import { Warning } from '../../Components/Warning/Warning'
 import { createUser } from '../../Service/user'
 import { ValidationForm } from '../../ValidationForm/ValidationForm'
 import './Form.css'
-
-type ErroProps = { 
-    message: string,
-    stack?: string ,
-    name: string,
-    cause?: unknown,
-}
 
 interface FormProps {
     login: string,

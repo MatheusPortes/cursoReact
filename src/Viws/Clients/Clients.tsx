@@ -108,16 +108,7 @@ export const Clientis = () => {
                <aside className="col-4">
                   <h4 className="client-title">Informações de Gasto</h4>
 
-                  {user &&
-                     user.buy_products.map(({ products }, index) => (
-                        <div
-                           key={index}
-                           className="box-flex box-info client-amount"
-                        >
-                           <p className="info-span">{products.name}:</p>
-                           <p className="info">{products.price} R$</p>
-                        </div>
-                     ))}
+
 
                   {user?.buy_products && (
                      <div className="client-amount">

@@ -5,10 +5,6 @@ interface Props {
     children?: React.ReactNode;
 }
 
-type TypeProps = {
-    type?: 'success' | 'error' | 'info' | 'warning'
-}
-
 type WarningProps = {
     type: 'success' | 'error' | 'info' | 'warning'
     message: string
