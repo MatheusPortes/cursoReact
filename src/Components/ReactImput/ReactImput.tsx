@@ -40,13 +40,12 @@ export function InputReact({ label, error, ...props }: InputReactProps) {
     } else {
         return (
             <>
-                <div className="input-react-check-box">
-                    <label className='react-check-box-label'>
-                        <input
-                            {...props} />
-                        {label ? ` ${label}` : ` ${name}`}
-                    </label>
-                </div>
+                <label className='react-check-box-label'>
+                    <input
+                        className='CB'
+                        {...props} />
+                    {label ? `${label}` : `${name}`}
+                </label>
             </>
         )
     }
