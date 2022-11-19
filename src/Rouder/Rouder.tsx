@@ -6,10 +6,14 @@ import { FormAula8 } from '../Viws/Form/Form.aula-8'
 import { Clientis } from '../Viws/Clients/Clients'
 import { Home } from '../Viws/Home/Home'
 import { FormAula9 } from 'src/Viws/Form/Form.aula-9'
+import { FormAula10 } from 'src/Viws/Form/Form.aula-10'
 
 export function dumbRoutes(pathname: string) {
     let Component
     switch (pathname) {
+        case '/form/atividade-10':
+            Component = FormAula10
+            break
         case '/form/atividade-9':
             Component = FormAula9
             break

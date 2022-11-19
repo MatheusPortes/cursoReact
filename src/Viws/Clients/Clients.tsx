@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import {
    MdKeyboardArrowLeft,
    MdOutlineKeyboardArrowRight,
@@ -21,8 +21,6 @@ export const Clientis = () => {
    const { range, setRange } = useRangeCarrossel()
 
    let number_mirror = clientButton.map((value, index) => index)
-
-   const slider = useRef<HTMLInputElement>(null)
 
    const firstWord = (text: string): string => {
       const array = text.split(' ')
@@ -71,7 +69,7 @@ export const Clientis = () => {
 
          <div className="clients">
             <div className="clients-header">
-               <nav className="clients-nav slider" ref={slider}>
+               <nav className="clients-nav slider">
                   <MdKeyboardArrowLeft
                      className="left-arrow"
                      onClick={prevSlide}
@@ -107,8 +105,6 @@ export const Clientis = () => {
             <div className="box-flex client-box-section">
                <aside className="col-4">
                   <h4 className="client-title">Informações de Gasto</h4>
-
-
 
                   {user?.buy_products && (
                      <div className="client-amount">
