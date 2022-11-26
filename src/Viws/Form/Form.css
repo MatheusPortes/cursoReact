@@ -80,5 +80,10 @@
 
 .quiz-button {
     margin: 2rem;
-    display: inline-block;
+    display: block;
+}
+
+.quiz-result {
+    flex-direction: column;
+    align-items: center;
 }
